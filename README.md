@@ -4,6 +4,29 @@ Projeto de fã inspirado em **Street Fighter II**, desenvolvido para **Windows**
 
 Este espaço apresenta o projeto e acompanha sua evolução. Sugestões sobre o visual, a apresentação e a experiência de jogo são bem-vindas, assim como a troca de ideias com outros fãs de jogos de luta.
 
+## Galeria
+
+Conheça o visual do projeto: menu, seleção de personagens e partidas. Clique em qualquer imagem para abrir o print completo.
+
+| Menu principal | Seleção de personagens |
+| --- | --- |
+| [![Menu principal do Super Street Fighter Turbo Remake](docs/screenshots/08-menu-principal.png)](docs/screenshots/08-menu-principal.png) | [![Seleção de personagens com Ryu e Ken](docs/screenshots/03-selecao-personagens-ryu-ken.png)](docs/screenshots/03-selecao-personagens-ryu-ken.png) |
+| **M. Bison vs. T. Hawk** | **Chun-Li vs. Cammy** |
+| [![M. Bison enfrentando T. Hawk](docs/screenshots/04-bison-vs-thawk.png)](docs/screenshots/04-bison-vs-thawk.png) | [![Chun-Li enfrentando Cammy](docs/screenshots/05-chun-li-vs-cammy.png)](docs/screenshots/05-chun-li-vs-cammy.png) |
+| **Sagat vs. Vega** | **Ken vs. Zangief** |
+| [![Sagat enfrentando Vega](docs/screenshots/06-sagat-vs-vega.png)](docs/screenshots/06-sagat-vs-vega.png) | [![Ken enfrentando Zangief](docs/screenshots/07-ken-vs-zangief.png)](docs/screenshots/07-ken-vs-zangief.png) |
+
+<details>
+<summary>Ver também as artes de apresentação</summary>
+
+| Akuma — arte de apresentação | Ryu — arte de apresentação |
+| --- | --- |
+| [![Arte de apresentação de Akuma](docs/screenshots/01-akuma.png)](docs/screenshots/01-akuma.png) | [![Arte de apresentação de Ryu](docs/screenshots/02-ryu.png)](docs/screenshots/02-ryu.png) |
+
+</details>
+
+Gostou do visual? [Conte sua opinião ou sugira uma melhoria](https://github.com/edhard-remakes/Super-Street-Fighter-Turbo-Remake-/issues/new/choose).
+
 ## Feito por fã, para a comunidade
 
 Este é um projeto **gratuito e sem objetivo comercial**, feito por um fã que gosta de reviver grandes jogos. A ideia é compartilhar o que for ficando pronto, aprender com outras pessoas e incentivar a comunidade a criar também.
