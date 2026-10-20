@@ -1,0 +1,172 @@
+[Info]
+name = "Honda HD"
+displayname = "E. Honda's Stage"
+versiondate = 01/22/16
+mugenversion = 1.1
+author = "Parse"
+
+[Camera]
+startx 		= 0
+starty 		= 0
+boundleft 	= -842
+boundright 	= 817
+boundhigh = 0
+boundlow  	= 0
+tension 	          = 200
+verticalfollow = 0
+floortension 	= 290
+overdrawhigh 	= 120
+overdrawlow 	= 120
+cuthigh 	          = 0
+cutlow              = 0
+
+[PlayerInfo]
+p1startx 	= -430
+p1starty 	= 0
+p1facing 	= 1
+p2startx 	= 430
+p2starty 	= 0
+p2facing 	= -1
+p3startx 	= -400
+p3starty 	= 0
+p3facing 	= 1
+p4startx 	= 400
+p4starty 	= 0
+p4facing 	= -1
+leftbound 	= -4000
+rightbound 	= 4000
+
+[Bound]
+screenleft 	= 150
+screenright 	= 150
+
+[StageInfo]
+zoffset 	= 968
+autoturn 	= 1
+resetBG 	= 0
+localcoord 	= 1920,1080
+xscale 		= .952
+yscale 		= 1
+
+[Scaling]
+topz     	= 0
+botz     	= 50
+topscale 	= 1
+botscale 	= 1.2
+
+[Shadow]
+intensity = 190
+color = 0,0,0
+yscale = -0.180
+fade.range = -790,-240
+xshear = -.2
+
+[Music]
+bgmusic = sound/honda-theme.mp3
+
+
+bgmvolume = 100
+
+[BGdef]
+spr = honda.sff
+debugbg = 0
+
+[BG Ceiling]
+type = parallax
+spriteno = 7,0
+layerno = 0
+start = 0,28
+mask = 0
+width = 5500, 3200
+delta = 1,1
+xscale = 1, 1
+yscalestart = 160
+
+[BG Floor1]
+type = parallax
+spriteno = 8,1
+layerno = 0
+start = 50,1413
+mask = 0
+delta = .61, 1
+xscale = 1, 2.75
+scalestart = 1.245,1.055
+
+[BG main]
+type = normal
+spriteno = 0,0
+start = 80,738
+mask = 1
+delta = .61, 1
+scalestart = 1.0334,.9356
+
+[BG left_wall]
+type = normal
+spriteno = 1,0
+start = -1466,883
+delta = .61, 1
+mask = 1
+scalestart = .67,.976
+
+[BG tub]
+type  = anim
+actionno = 1
+start = -22,820
+mask = 1
+delta = .74,1
+scalestart = 1.0224,.758
+
+[BG tub_parallax]
+type = normal
+spriteno = 10,0
+start = -22,820
+mask = 1
+delta = .74,1
+scalestart = 1.0224,.758
+
+[BG showerheads]
+type = normal
+spriteno = 3,0
+start = -1366,566
+delta = .61, 1
+mask = 1
+scalestart = .74,.964
+
+[BG bucket]
+type = normal
+spriteno = 4,0
+start = -1028,819
+mask = 1
+delta = .73,1
+scalestart = .605,.75
+
+[BG lantern]
+type = normal
+spriteno = 2,0
+start = 1450,522
+delta = .8, 1
+mask = 1
+scalestart = 1.02,.837
+
+;--------------------------------------------------------
+[Begin Action 1] ; fixed bath wall
+5,0, 0,0, -1
+
+[Begin Action 2] ; sign
+9,2, 0,0, 1800
+9,0, 0,0, 16
+9,1, 0,0, 16
+9,0, 0,0, 16
+9,1, 0,0, 16
+9,0, 0,0, 16
+9,1, 0,0, 16
+9,0, 0,0, 16
+9,1, 0,0, 16
+9,0, 0,0, 16
+9,1, 0,0, 16
+9,0, 0,0, 16
+9,1, 0,0, 16
+9,0, 0,0, 16
+9,1, 0,0, 16
+9,0, 0,0, 16
+9,1, 0,0, 16

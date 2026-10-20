@@ -1,0 +1,212 @@
+[Data]
+life = 1000
+attack = 100
+defence = 100
+fall.defence_up = 30
+liedown.time = 20
+airjuggle = 15
+juggle = 15
+sparkno = 2
+guard.sparkno  = 40
+KO.echo = 1
+volume = 10
+IntPersistIndex = 60
+FloatPersistIndex = 40
+
+[Size]
+xscale = 1           
+yscale = 1           
+ground.back = 20
+ground.front = 20
+air.back = 20
+air.front = 20
+z.width = 3          
+height = 60	     
+attack.dist = 160
+proj.attack.dist = 90
+proj.doscale = 0
+head.pos = -5, -90
+mid.pos = -5, -60
+shadowoffset = 0
+draw.offset = 0,0
+
+[Velocity]
+walk.fwd  = 4
+walk.back = -3.7
+run.fwd  = 5.5, 0
+run.back = -4.5,-3.8
+jump.neu = 0,-9
+jump.back = -3.7
+jump.fwd = 3.5
+runjump.back = -3.5,-9.5
+runjump.fwd = 4,-9.5
+airjump.neu = 0,-8.1
+airjump.back = -2.55
+airjump.fwd = 2.5
+
+[Movement]
+airjump.num = 0
+airjump.height = 35
+yaccel = .55				;.44 is default	1 is light and bigger is faster
+stand.friction =.75				; .85  
+crouch.friction =.7.5			; .82 
+
+
+
+;===========================================================================
+;------------------------------------------------------------------------------------------------------------------------------------
+[State -2, Super finish style 1]
+type = Explod
+triggerall = Win && !WinTime
+triggerall = NumExplod(13580) = 0
+trigger1 = StateNo = [2000,2999]		;normal 超必殺技
+trigger2 = StateNo = [3000,3999]		;EX 超必殺技
+anim = F 40
+ID = 13580
+sprpriority = -3
+postype = left
+pos = -30,10
+bindtime = -1
+supermove = 1
+ownpal = 1
+removetime = 160
+
+[State -2,AssertSpecial]
+type = AssertSpecial
+triggerall = 1
+trigger1 = NumExplod(13580) = 1
+flag = NoBarDisplay
+flag2 = NoBG
+flag3 = NoFG
+ignorehitpause = 1
+
+[State -2,AssertSpecial]
+type = AssertSpecial
+triggerall = 1
+trigger1 = NumExplod(13580) = 1
+flag = NoMusic
+ignorehitpause = 1
+
+; States that are executed when in self's state file (use statedef -2)
+;---------------------------------------------------------------------------
+;=================== [-2 states] ======================================
+[Statedef -2]
+[State -2, Var0 set]
+;set var(8) is 1 when the round is start
+type = VarSet
+trigger1 = RoundState < 2        	 ;<--請參考data\triggers.txt中的說明
+trigger1 = facing = 1
+v = 8
+value = 1
+
+[State -2, Var0 set]
+;set var(8) is 1 when the round is start
+type = VarSet
+trigger1 = RoundState < 2         	;<--請參考data\triggers.txt中的說明
+trigger1 = facing = -1
+v = 8
+value = 2
+
+;L
+[State -2, Cap1_L ]	;SF
+type = Explod
+triggerall = NumExplod(13500) = 0
+trigger1 = var(8) =1 && var(14) = 0
+id = 13500
+persistent = 0
+sprpriority = -2
+anim = 13500
+pos = 0,60
+postype = left
+ignorehitpause = 1
+bindtime = -1
+ownpal = 1
+
+;R
+[State -2, Cap1_L ]	;SF
+type = Explod
+triggerall = NumExplod(13500) = 0
+trigger1 = var(8) =2 && var(14) = 0
+id = 13500
+persistent = 0
+sprpriority = -2
+anim = 13500
+pos = 300,60
+postype = left
+ignorehitpause = 1
+bindtime = -1
+ownpal = 1
+
+;L
+;for show groove if 3p also geese/ dont use my pack(mmx) 1350-1361
+[State -2, Cap1_L ]	;EX
+type = Explod
+triggerall = NumExplod(13560) = 0
+trigger1 = var(8) =1 && var(14) = 1
+id = 13560
+persistent = 0
+sprpriority = -2
+anim = 13560
+pos = 0,60
+postype = left
+ignorehitpause = 1
+bindtime = -1
+ownpal = 1
+
+;R
+[State -2, Cap1_L ]	;EX
+type = Explod
+triggerall = NumExplod(13560) = 0
+trigger1 = var(8) =2 && var(14) = 1
+id = 13560
+persistent = 0
+sprpriority = -2
+anim = 13560
+pos = 300,60
+postype = left
+ignorehitpause = 1
+bindtime = -1
+ownpal = 1
+
+;================================================================
+[State -2,sound]	;have sound when use  PK
+type = PlaySnd
+triggerall = animelem = 2
+trigger1 = stateno = 200 || stateno = 220 || stateno = 240 || stateno = 260 || stateno = 300 || stateno = 320 || stateno = 340 || stateno = 370 || stateno = 400 || stateno = 440 || stateno = 470  || stateno = 355
+value = 1,1
+
+[State -2,sound]
+type = PlaySnd
+triggerall = animelem = 2
+trigger1 = stateno =  205 || stateno = 245 || stateno =  305 || stateno =  345 || stateno = 375||stateno =  405 || stateno =  445 || stateno =  475
+trigger2 = stateno =  225 || stateno = 265 || stateno =  305 || stateno =  325 || stateno = 360 ||stateno =  425 || stateno =  460 || stateno =  490
+value = 1,2
+
+[State -2,sound]
+type = PlaySnd
+triggerall = animelem = 2
+trigger1 = stateno =   210 || stateno = 250 || stateno = 250 || stateno = 310 || stateno = 350 || stateno = 380 || stateno = 410 || stateno = 450 || stateno = 480
+trigger2 = stateno =   230 || stateno = 270 || stateno = 250 || stateno = 330 || stateno = 365 || stateno = 395|| stateno = 430 || stateno = 465 || stateno = 495
+value = 1,3
+
+[State -2, Landing Sound]
+type = PlaySnd
+triggerall = Time = 1
+trigger1 = stateno = 52 
+value =  4,1
+
+; States that are executed when in self's state file (use statedef -3)
+;---------------------------------------------------------------------------
+;=================== [-3 states] ======================================
+[Statedef -3]
+
+;varset
+[State -3, var]
+type = VarSet
+trigger1 = palno = 1 || palno = 2 || palno = 3 || palno = 4 || palno = 5 || palno = 6
+var(14) = 0
+
+[State -3, var]
+type = VarSet
+trigger1 = palno = 7 || palno = 8 || palno = 9 || palno = 10 || palno = 11 || palno = 12
+var(14) = 1

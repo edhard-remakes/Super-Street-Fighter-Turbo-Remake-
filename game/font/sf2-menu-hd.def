@@ -1,0 +1,10 @@
+[FNT v2]
+fntversion = 2,00
+name = SF2 HD classic
+[Def]
+Type = bitmap
+BankType = sprite
+Size = 232,147
+Spacing = 0,0
+Offset = 0,0
+File = sf2-menu-hd.sff

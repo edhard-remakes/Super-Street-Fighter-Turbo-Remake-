@@ -1,0 +1,467 @@
+;----------------------------------------------------------
+;TagIn
+;----------------------------------------------------------
+;
+;Changes the state number of the player, and that of the player's partner.
+;
+;Required arguments:
+;  stateno = state_no (int)
+;    state_no is the number of the state to change to.
+;  partnerstateno = state_no (int)
+;    state_no is the number of the state to change the partner to.
+;  ctrl = ctrl_flag (int)
+;    Set to nonzero to have control, or 0 to disable control.
+;
+;Optional arguments:
+;  none
+;
+;Example:
+;  none
+;
+;Notes:
+;  Crashes if triggered without a partner being present.
+;
+;----------------------------------------------------------
+;TagIn Implementation
+;----------------------------------------------------------
+
+; Var(51) - Simul TAG flag. 0 = Normal, 1 = Special Simul (with partner)
+
+
+
+;***************************************************************************************************;
+;***************************************************************************************************;
+
+;
+; ******************
+; **  TAG states  **
+; ******************
+;
+; Simul TAG Code by R.o.q.u.e., slightly modified by AeroGP
+;
+; PLEASE GIVE CREDIT IF MODIFYING THIS!!!
+
+;***************************************************************************************************;
+;***************************************************************************************************;
+
+
+
+
+
+;---------------------------------------------------------------------------
+; Entering the screen
+[Statedef 4500]
+type = S
+movetype = I
+physics = S
+anim = 20;100	; <- You can use the standard running animation or put another one
+sprpriority = 2
+ctrl = 0
+
+[State 4500, 1]
+type = ChangeAnim
+trigger1 = Partner, Life <= 0
+trigger1 = Anim != 4500
+value = 4500
+
+[State 4500, position]
+type = PosSet
+trigger1 = time = 0
+x = -243*facing
+y = 0
+
+[State 4500, velocity]
+type = VelSet
+trigger1 = Anim != 4500
+x = 10
+
+[State 4500, velocity2]
+type = VelSet
+trigger1 = Anim = 4500
+trigger1 = AnimElem = 2, >= 0
+x = 8
+
+[State 4500, invincibility] ; the character cannot be hit until he has fully entered on the stage
+type = NotHitBy
+trigger1 = BackEdgeBodyDist <= 0
+value = SCA
+time = 2
+
+[State 4500, invincibility] ; if partner was KOed, appear being invincible
+type = NotHitBy
+trigger1 = Partner, Life <= 0
+value = SCA
+time = 6
+
+[State 4500, screen bound] ; Prevents the camera from following the char
+type = ScreenBound
+trigger1 = 1
+value = 0
+
+[State 4500, attack state] ; the character attacks his opponent when :
+type = ChangeState
+triggerall = BackEdgeBodyDist >= 0	; he is on the stage
+triggerall = selfanimexist (230);(4000)					; <--- change this...
+trigger1 = partner, life > 0		; and his partner is alive
+trigger1 = P2BodyDist X = [0, 50]           ; and his enemy is close
+trigger1 = !Win && !Lose
+trigger1 = power >= 2000
+value = 230;4000								; <--- and this for the alternate super move!
+
+[State 4500, attack state] ; the character attacks his opponent when :
+type = ChangeState
+triggerall = BackEdgeBodyDist >= 0	; he is on the stage
+triggerall = selfanimexist (230);(3000)					; <--- change this...
+trigger1 = partner, life > 0		; and his partner is alive
+trigger1 = P2BodyDist X = [0, 50]           ; and his enemy is close
+trigger1 = !Win && !Lose
+trigger1 = power >= 2000
+value = 230;3000								; <--- and this for the super move!
+
+[State 4500, attack state] ; the character attacks his opponent when :
+type = ChangeState
+triggerall = BackEdgeBodyDist >= 0	; he is on the stage
+triggerall = selfanimexist (230);(2000)					; <--- change this...
+trigger1 = partner, life > 0		; and his partner is alive
+trigger1 = P2BodyDist X = [0, 50]           ; and his enemy is close
+trigger1 = !Win && !Lose
+trigger1 = power >= 1000
+value = 230;2000								; <--- and this for the alternate lv.2 move!
+
+[State 4500, attack state] ; the character attacks his opponent when :
+type = ChangeState
+triggerall = BackEdgeBodyDist >= 0	; he is on the stage
+triggerall = selfanimexist (230);(1010)					; <--- change this...
+trigger1 = partner, life > 0		; and his partner is alive
+trigger1 = P2BodyDist X = [0, 50]           ; and his enemy is close
+trigger1 = !Win && !Lose
+trigger1 = power >= 1000
+value = 230;1010								; <--- and this for the lv.2 move!
+
+[State 4500, attack state] ; the character attacks his opponent when :
+type = ChangeState
+triggerall = BackEdgeBodyDist >= 0	; he is on the stage
+triggerall = selfanimexist (230);(1000)					; <--- change this...
+trigger1 = partner, life > 0		; and his partner is alive
+trigger1 = P2BodyDist X = [0, 50]           ; and his enemy is close
+trigger1 = !Win && !Lose
+trigger1 = power >= 0
+value = 230;1000								; <--- and this for the alternate lv.1 move!
+
+[State 4500, attack state] ; the character attacks his opponent when :
+type = ChangeState
+triggerall = BackEdgeBodyDist >= 0	; he is on the stage
+triggerall = selfanimexist (230);(500)					; <--- change this...
+trigger1 = partner, life > 0		; and his partner is alive
+trigger1 = P2BodyDist X = [0, 50]           ; and his enemy is close
+trigger1 = !Win && !Lose
+trigger1 = power >= 0
+value = 230;500								; <--- and this for the lv.1 move!
+
+[State 4500, 3]
+type = VelSet
+triggerall = BackEdgeBodyDist >= 0
+trigger1 = FrontEdgeBodyDist <= 0	; he has reached the other side of the screen
+trigger2 = partner, life <= 0		; his partner has just died
+trigger2 = (Time >= 50) || (P2BodyDist X = [-100, 100])
+trigger3 = P2Dist X < 0                 ; his enemy is behind him
+trigger4 = P2BodyDist X = [-100, 100]
+trigger4 = Win
+trigger5 = Win
+trigger5 = Time >= 20
+x = 0
+y = 0
+
+[State 4500, end state] ; the character does not attack his opponent if:
+type = ChangeState
+triggerall = BackEdgeBodyDist >= 0
+trigger1 = FrontEdgeBodyDist <= 0	; he has reached the other side of the screen
+trigger2 = Partner, Life <= 0           ; his partner has just died
+trigger2 = (Time >= 50) || (P2BodyDist X = [-100, 100])
+trigger3 = P2Dist X < 0                 ; his enemy is behind him
+trigger4 = P2BodyDist X = [-100, 100]
+trigger4 = Win
+trigger5 = Win
+trigger5 = Time >= 20
+value = 0
+ctrl = 1
+
+[State 4500, end state] ; cancel if:
+type = ChangeState
+trigger1 = Time >= 50
+value = 0
+ctrl = 1
+
+
+; Leaving Taunt
+;--------------
+
+[Statedef 4510] ; Define your own taunt here
+type = S
+movetype = I
+physics = S
+anim = 195
+sprpriority = -2
+velset = 0,0
+ctrl = 0
+
+[state 4510, poweradd]
+type = poweradd
+trigger1 = partner, life
+trigger1 = life
+trigger1 = time = 0
+value = -1000
+
+[State 4510, invincibility] ; the character cannot be hit since he is leaving
+type = NotHitBy
+trigger1 = 1
+value = SCA
+
+[State 4510, ghost] ; Prevents the camera from following the char
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 4510, end state]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 4511
+
+
+; Leave the stage
+;----------------
+
+[Statedef 4511]
+type = S
+movetype = I
+physics = N
+anim = 40	; <- Jump Start animation
+sprpriority = -2
+ctrl = 0
+
+[State 4511, anim]
+type = ChangeAnim
+trigger1 = Anim = 40 && AnimTime = 0 ; <- plays the jump back animation when the jump start animation is finished
+value = 43
+
+[State 4511, state type]
+type = StateTypeSet
+trigger1 = Anim = 43 && AnimElem = 1
+statetype = A
+
+[State 4511, velocity]
+type = VelSet
+trigger1 = Anim = 43 && AnimElem = 1 ; <- jumping back animation
+x = -12
+y = -7.5
+
+[State 4511, invincibility]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+
+[State 4511, ghost]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 4511, screen bound]
+type = ScreenBound
+trigger1 = 1
+value = 0
+
+[State 4511, wait outside state]
+type = ChangeState
+trigger1 = backedgedist < -30
+value = 4512
+
+
+; Wait out of the screen
+;-----------------------
+
+[Statedef 4512]
+type = A
+movetype = I
+physics = N
+anim = 0
+velset = 0,0
+ctrl = 0
+
+[State 4512, invincibility]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+
+[State 4512, ghost]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 4512, screen bound] ; Prevents the camera from following the char
+type = ScreenBound
+trigger1 = 1
+value = 0
+
+[State 4512, life add] ; Gains life (optional)
+type = LifeAdd
+trigger1 = (gametime%10) = 0
+value = 1
+
+[State 4512, turn] ; always face the same direction as partner
+type = turn
+trigger1 = facing != partner,facing
+
+[State 4512, position] ; always stay behind and at the same distance of the char on the stage
+type = posset
+trigger1 = 1
+x = (partner, pos x) - 1000*facing
+y = -150
+
+;---------------------------------------------------------------------------
+; Jumping in
+[Statedef 4520]
+type = S
+movetype = I
+physics = N
+anim = 42
+sprpriority = 2
+ctrl = 0
+
+[State 4520, 0]
+type = PosSet
+trigger1 = AnimElem = 2, < 0
+x = -243*Facing
+y = 0
+
+[State 4520, 1]
+type = VelSet
+trigger1 = AnimElem = 2, = 0
+x = 4 ;.5
+y = -8.75
+
+[State 4520, 2]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 6
+
+[State 4520, 3]
+type = ScreenBound
+trigger1 = 1
+value = 0
+
+[State 4520, 8]
+type = Gravity
+trigger1 = AnimElem = 2, >= 0
+
+[State 4520, 9]
+type = VelSet
+trigger1 = Vel Y >= 0
+trigger1 = Pos Y > 0
+trigger1 = AnimElem = 2, >= 0
+x = 0
+y = 0
+
+[State 4520, 10]
+type = ChangeState
+trigger1 = Vel Y >= 0
+trigger1 = Pos Y > 0
+trigger1 = AnimElem = 2, >= 0
+value = 4521
+
+;---------------------------------------------------------------------------
+; Landing
+[Statedef 4521]
+type = S
+movetype = I
+physics = N
+anim = 47
+sprpriority = 2
+ctrl = 0
+
+[State 4520, 0]
+type = PosSet
+trigger1 = Time = 0
+y = 0
+
+[State 4520, 5]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 6
+
+[State 4520, 10]
+type = ChangeState
+trigger1 = AnimTime >= 0
+value = 0
+ctrl = 1
+
+
+
+
+
+;***************************************************************************************************;
+;***************************************************************************************************;
+
+;
+; **********************
+; **  State overides  **
+; **********************
+;
+; Overides for common, -2, and -3 states
+; PLEASE READ CAREFULLY: IF THE CHARACTER DOES NOT HAVE THESE STATES, FOLLOW
+; THE HINTS (MARKED WITH THE FOLLOWING: -!!!->) TO OVERIDE THE CHARACTERS
+; STATES.
+;
+; PLEASE GIVE CREDIT IF MODIFYING THIS!!!
+
+;***************************************************************************************************;
+;***************************************************************************************************;
+
+
+
+
+
+
+;---------------------------------------------------------------------------
+; Initialize (at the start of the round)
+[Statedef 5900]
+type = S
+
+[State 5900, 0] ;Clear all int variables
+type = VarRangeSet
+trigger1 = roundno = 1
+value = 0
+last = 49
+
+[State 5900, 1] ;Clear all float variables
+type = VarRangeSet
+trigger1 = roundno = 1
+fvalue = 0
+
+
+;-!!!-> ADD THESE AT THE BOTTOM IF THIS STATEDEF ALREADY EXISTS IN THE CHARACTER (NOT IN COMMON1.CNS);
+;	REMEMBER TO DELETE ANY "CHANGESTATES" ALREADY IN THE STATEDEF. <-!!!-;
+
+
+[State 5900, 7]
+type = VarSet
+triggerall = NumPartner
+trigger1 = RoundState < 2
+trigger1 = Var(51) = 0
+v = 51
+value = 1
+
+
+
+[State 5900, 11] ;Intro
+type = ChangeState
+trigger1 = roundno = 1
+trigger1 = !NumPartner ; partner does not exist
+value = 190
+
+
+
+
+
+

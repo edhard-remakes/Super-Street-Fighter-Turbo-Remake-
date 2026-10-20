@@ -1,0 +1,18 @@
+[SceneDef]
+spr = sf2logo.sff
+startscene = 0
+
+[Scene 0]
+clearcolor = 0,0,0
+fadein.time = 20
+bg.name = Scene0bg
+end.time = 25
+
+[Scene0bgDef]
+
+[Scene0bg logo]
+type = normal
+spriteno = 1,0
+start = 0,72
+scalestart = 0.108588351,0.108588351
+mask = 1

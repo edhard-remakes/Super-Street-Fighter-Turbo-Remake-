@@ -1,0 +1,228 @@
+[Info]
+name = "Blanka HD"
+displayname = "Blanka's Stage"
+versiondate = 01/22/16
+mugenversion = 1.1
+author = "Parse"
+
+[Camera]
+startx 		= 0
+starty 		= 0
+boundleft 	= -794
+boundright 	= 794
+boundhigh = 0
+boundlow  	= 0
+tension 	          = 200
+verticalfollow = 0
+floortension 	= 290
+overdrawhigh 	= 120
+overdrawlow 	= 120
+cuthigh 	          = 0
+cutlow              = 0
+
+[PlayerInfo]
+p1startx 	= -430
+p1starty 	= 0
+p1facing 	= 1
+p2startx 	= 430
+p2starty 	= 0
+p2facing 	= -1
+p3startx 	= -400
+p3starty 	= 0
+p3facing 	= 1
+p4startx 	= 400
+p4starty 	= 0
+p4facing 	= -1
+leftbound 	= -4000
+rightbound 	= 4000
+
+[Bound]
+screenleft 	= 150
+screenright 	= 150
+
+[StageInfo]
+zoffset 	= 968
+autoturn 	= 1
+resetBG 	= 0
+localcoord 	= 1920,1080
+xscale 		= .952
+yscale 		= 1
+
+[Scaling]
+topz     	= 0
+botz     	= 50
+topscale 	= 1
+botscale 	= 1.2
+
+[Shadow]
+intensity = 150
+color = 0,0,0
+yscale = -0.160
+fade.range = -350,-140
+xshear = -.2
+
+[Music]
+bgmusic = sound/blanka-theme.mp3
+
+
+bgmvolume = 100
+
+[BGdef]
+spr = blanka.sff
+debugbg = 0
+
+[BG Far_BG]
+type = normal
+spriteno = 3,0
+start = 10,1138
+mask = 0
+delta = .28, 1
+scalestart = 1.24,1.17
+
+[BG water]
+type = parallax
+spriteno = 0,2
+start = 10,1138
+mask = 0
+delta = .28, 1
+width = 2048, 7072
+xscale = 1, 2
+scalestart = 1.24,1.17
+
+[BG element01]
+type  = anim
+actionno = 1
+start = 20,918
+mask = 1
+delta = .52, 1
+scalestart = 1.228,1.065
+
+[BG Mid_BG]
+type = normal
+spriteno = 2,0
+start = -72,1155
+mask = 1
+delta = .635, 1
+scalestart = 1.335,1.467
+
+[BG Front_BG]
+type = normal
+spriteno = 1,0
+start = -24,1155
+mask = 1
+delta = .9, 1
+scalestart = 1.163,1.24
+
+[BG Ground]
+type = parallax
+spriteno = 12,0
+start = 255,1423
+mask = 0
+delta = .815, 1
+xscale = 1, 1.94
+scalestart = 1.26,.93
+
+[BG camera_guy]
+type  = anim
+actionno = 2
+start = 1018,903
+mask = 1
+delta = .9, 1
+scalestart = .85,1.015
+
+[BG tough_guy]
+type  = anim
+actionno = 5
+start = 1328,890
+mask = 1
+delta = .9, 1
+scalestart = .894,1.045
+
+[BG girl_jump]
+type  = anim
+actionno = 4
+start = 1469,876
+mask = 1
+delta = .9, 1
+scalestart = .75,.97
+
+[BG dad_son]
+type  = anim
+actionno = 3
+start = 1232,922
+mask = 1
+delta = .9, 1
+scalestart = 1.145,1.005
+
+[BG sit_fish]
+type  = anim
+actionno = 6
+start = 647,920
+mask = 1
+delta = .9, 1
+scalestart = .874,1.122
+
+[BG guy_fish]
+type  = anim
+actionno = 7
+start = -366,883
+mask = 1
+delta = .88, 1
+scalestart = 1.124,0.974
+
+[BG Foreground_L]
+type = normal
+spriteno = 4,0
+layerno = 1
+start = -1000,1153
+mask = 1
+delta = 1.4, 1
+scalestart = 1.524,1.96
+
+[BG Foreground_R]
+type = normal
+spriteno = 5,0
+layerno = 1
+start = 1200,1158
+mask = 1
+delta = 1.4, 1
+scalestart = 1.48,2.04
+
+;--------------------------------------------------------
+[Begin Action 1] ; stable house architecture
+0,0, 0,0, -1
+
+[Begin Action 2] ; camera_guy
+6,0, 0,0, 16
+6,1, 0,0, 16
+6,2, 0,0, 16
+
+[Begin Action 3] ; dad_son
+7,0, 0,0, 8
+7,1, 0,0, 8
+7,2, 0,0, 16
+7,1, 0,0, 8
+7,0, 0,0, 8
+
+[Begin Action 4] ; girl_jump
+8,2, 0,0, 8
+8,1, 0,0, 8
+8,0, 0,0, 16
+8,1, 0,0, 8
+8,2, 0,0, 8
+
+[Begin Action 5] ; tough_guy
+11,0, 0,0, 16
+11,1, 0,0, 16
+11,2, 0,0, 16
+11,1, 0,0, 16
+
+[Begin Action 6] ; sit_fish
+10,0, 0,0, 16
+10,1, 0,0, 16
+10,2, 0,0, 16
+
+[Begin Action 7] ; guy_fish
+9,0, 0,0, 16
+9,1, 0,0, 16
+9,2, 0,0, 16

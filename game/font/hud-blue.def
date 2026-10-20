@@ -1,0 +1,10 @@
+[FNT v2]
+fntversion = 2,00
+name = SF2 HD blue
+[Def]
+Type = bitmap
+BankType = sprite
+Size = 64,80
+Spacing = -13,0
+Offset = 0,0
+File = hud-blue.sff

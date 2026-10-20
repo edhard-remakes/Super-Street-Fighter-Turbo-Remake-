@@ -1,0 +1,130 @@
+[Data]
+power = 3000
+Life = 1000
+Attack = 100
+Defence = 100
+Fall.Defence_Up = 50
+Liedown.Time = 23
+AirJuggle = 10
+SparkNo = S51
+Guard.SparkNo = S52
+KO.Echo = 0
+Volume = 100
+IntPersistIndex = 4,5,7,9,10,11,12,13,30,60
+FloatPersistIndex = 40
+
+[Size]
+XScale = 1
+YScale = 1
+Ground.Front = 18
+Ground.Back = 15
+Air.Front = 17
+Air.Back = 10
+Height = 76
+Attack.Dist = 250
+Proj.Attack.Dist = 250
+Proj.DoScale = 0
+Head.Pos = 9, -81
+Mid.Pos = 0, -56
+ShadowOffset = 0
+Draw.Offset = 0, 0
+
+[Velocity]
+Walk.Fwd = 3.43 
+Walk.Back = -2.27 
+Run.Fwd = 0
+Run.Back = 0
+Jump.Neu = 0,-9.2 
+Jump.Fwd = 3.4 
+Jump.Back = -3.84 
+RunJump.Fwd = 0
+RunJump.Back = 0
+AirJump.Neu = 0
+AirJump.Fwd = 0
+AirJump.Back = 0
+
+[Movement]
+AirJump.Num = 0
+AirJump.Height = 0
+YAccel = .53 
+Stand.Friction = .89
+Crouch.Friction = .85
+; Shared Ryu/Ken normal jump startup and landing.
+[Statedef 40]
+type    = S
+physics = S
+anim = 40
+ctrl = 0
+
+[State 40]
+type = HitBy
+trigger1 = 1
+value = SCA, NA,SA,HA,NP,SP,HP
+
+[State 40, 1]
+type = VarSet
+trigger1 = Time = 0
+sysvar(1) = 0
+
+[State 40, 2]
+type = VarSet
+trigger1 = command = "holdfwd"
+sysvar(1) = 1
+
+[State 40, 3]
+type = VarSet
+trigger1 = command = "holdback"
+sysvar(1) = -1
+
+[State 40, 4]
+type = VelSet
+trigger1 = AnimTime = 0
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 5]
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = prevstateno = 100 ;RUN_FWD
+trigger1 = sysvar(1) = 1
+x = const(velocity.runjump.fwd.x)
+
+[State 40, 6]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;ジャンプ
+[Statedef 52]
+type    = S
+physics = S
+ctrl = 0
+anim = 47
+velset = 0,0
+
+[State 52, 2]
+type = PosSet
+trigger1 = Time = 0
+y = 0
+
+[State 52, 2]
+type = PlaySnd
+trigger1 = Time = 0
+value = 4, 0
+
+[State 52, 2]
+type = CtrlSet
+trigger1 = time = ifelse((prevstateno = [350,410]),2,1)
+value = 1
+
+[State 52, 4]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;---------------------------------------------------------------------------
+;勝利ポーズ分岐

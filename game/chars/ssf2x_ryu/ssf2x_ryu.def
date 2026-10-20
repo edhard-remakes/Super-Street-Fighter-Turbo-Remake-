@@ -1,0 +1,24 @@
+[Info]
+portraitscale = 0.145454545455
+Name         ="ryu"
+DisplayName  ="ryu"
+VersionDate  =09,23,2009
+MugenVersion =04,14,2002
+Author       ="G.D.T"
+Pal.Defaults =1,7
+
+[Files]
+Cmd     = ryu.cmd
+Cns     = ryu.cns
+St      = ryu.cns
+St1     = option.txt
+st8 = hdr_remix.cns
+StCommon = common1.cns
+Sprite  = ryu.sff
+Anim    = ryu.air
+Sound   = ryu.snd
+
+
+[Arcade]
+Intro.Storyboard =
+Ending.Storyboard =

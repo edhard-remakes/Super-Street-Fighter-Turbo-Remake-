@@ -1,0 +1,23 @@
+[Info]
+portraitscale = 0.123076923077
+Name         ="ken"
+DisplayName  ="ken"
+VersionDate  =09,23,2009
+MugenVersion =04,14,2002
+Author       ="G.D.T"
+Pal.Defaults =1,7
+
+[Files]
+Cmd     =ken.cmd
+Cns     =ken.cns
+St      =ken.cns
+st1=option.txt
+StCommon =common1.cns
+Sprite  =ken.sff
+Anim    =ken.air
+Sound   =ken.snd
+
+
+[Arcade]
+Intro.Storyboard =
+Ending.Storyboard =

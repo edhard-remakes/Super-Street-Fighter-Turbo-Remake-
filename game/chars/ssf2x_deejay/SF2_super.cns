@@ -1,0 +1,450 @@
+;SF2_DJ
+;=======================================================================================================
+[Statedef 2000]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 2000
+
+[State 1000, playsnd]
+type = Poweradd
+trigger1 = time = 0
+value = -3000
+
+[State 3020,SuperPause]
+type = SuperPause
+trigger1 = Time = 0
+time = 30
+anim = 100
+sound = S6,1
+pos = -10,-60
+movetime = 0
+darken = 1
+unhittable = 1
+
+[State 3075,AfterImage]
+type = AfterImage
+trigger1 = Time = 0
+time = 70
+length = 16
+palcolor = 256
+palinvertall = 0
+palbright = 30,30,30
+palcontrast = 100,100,220
+palpostbright = 0, 0, 0
+paladd = 10,10,45
+palmul = .65,.65,.85
+timegap = 2
+framegap = 4
+trans = add1
+
+[State 1200,1]
+type = PlaySnd
+trigger1 = animelem = 6 || animelem = 14 || animelem =  22 || animelem = 30
+value = 1,3
+
+[State 1200,1]
+type = PlaySnd
+trigger1 = animelem = 22
+value = 30,2
+
+[State 1000, playsnd]
+type = NotHitBy
+trigger1 = time <= 30
+value = ,NA ,NP
+
+[State 1000, playsnd]
+type = NotHitBy
+trigger1 = time <= 10
+value = SCA
+
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 0
+x = 5
+y = -2.5
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 4
+y = -0.5
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 6
+y = 3
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 11
+x = 0
+y = 0
+
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 16
+x = 5
+y = -2.5
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 20
+y = -0.5
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 22
+y = 3
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 27
+x = 0
+y = 0
+
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 36
+x = 5
+y = -2.5
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 40
+y = -0.5
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 42
+y = 3
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 47
+x = 0
+y = 0
+
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 36
+x = 5
+y = -2.5
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 40
+y = -0.5
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 42
+y = 3
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 47
+x = 0
+y = 0
+
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 51
+x = 5
+y = -3
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 55
+y = -0.5
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 57
+y = 3
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 62
+x = 0
+y = 0
+
+[State 1200,1]
+type = PosSet
+trigger1 = time = 14 || time = 32 || time =  45 || time =  62
+y = 0
+
+[State 210,2]
+type = HitDef
+trigger1 = animelem = 6 || animelem = 15 || animelem =  23 
+priority = 5, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = A,SA			;STAND / NORMAL ATTACK
+hitflag = MAF			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = up ; = medium			;2p ANIM
+ground.type = high
+;
+damage = 60,10
+givepower = 100
+;
+pausetime = 8,8
+guard.pausetime = 8,8
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -5,0
+air.velocity = -3,-3
+guard.velocity = -10
+airguard.velocity = -3,-5
+;
+ground.cornerpush.veloff = -2
+guard.cornerpush.veloff = -2
+;
+sparkxy = -20,-65
+;
+hitsound = 19002,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 40
+;
+fall = 0
+fall.recover = 0
+
+[State 210,2]
+type = HitDef
+trigger1 = animelem = 31
+priority = 5, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = A,SA			;STAND / NORMAL ATTACK
+hitflag = MAF			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = up ; = medium			;2p ANIM
+ground.type = high
+;
+damage = 120,10
+givepower = 100
+;
+pausetime = 8,8
+guard.pausetime = 8,8
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -2,-9
+air.velocity = -2,-8.5
+guard.velocity = -10
+airguard.velocity = -3,-5
+;
+ground.cornerpush.veloff = -15
+guard.cornerpush.veloff = -15
+;
+sparkxy = -20,-65
+;
+hitsound = 19002,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 40
+;
+fall = 1
+fall.recover = 0
+
+[State 1200,1]
+type = changeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+
+;=======================================================================================================
+[Statedef 2100]
+type = S
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 2100
+juggle = 0
+
+[State 1000, playsnd]
+type = Poweradd
+trigger1 = time = 0
+value = -3000
+
+[State 3020,SuperPause]
+type = SuperPause
+trigger1 = Time = 0
+time = 30
+anim = 100
+sound = S6,1
+pos = -10,-60
+movetime = 0
+darken = 1
+unhittable = 1
+
+[State 3075,AfterImage]
+type = AfterImage
+trigger1 = Time = 0
+time = 80
+length = 16
+palcolor = 256
+palinvertall = 0
+palbright = 30,30,30
+palcontrast = 100,100,220
+palpostbright = 0, 0, 0
+paladd = 10,10,45
+palmul = .65,.65,.85
+timegap = 2
+framegap = 4
+trans = add1
+
+[State 1200,1]
+type = ChangeState
+trigger1 = animtime = 0
+value = 2110
+
+[Statedef 2110]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 2110
+
+[State 1200,1]
+type = PlaySnd
+trigger1 = animelem = 1 || animelem = 5 || animelem =  11 || animelem = 15
+trigger2 = animelem = 19 || animelem = 25 || animelem =  29 || animelem = 33 || animelem = 38
+value = 1,3
+
+[State 1200,1]
+type = PlaySnd
+trigger1 = animelem = 1 || animelem = 5 || animelem =  11 || animelem = 15
+trigger2 = animelem = 19 || animelem = 25 || animelem =  29 || animelem = 33 || animelem = 38
+value = 30,0
+
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 0
+x = 5
+y = -4
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 10
+y = -3
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 20
+y = -2
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 30
+x = 1
+y = -1
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 40
+y = -0.5
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 50
+y = -0.5
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 60
+y = -0.5
+
+[State 210,2]
+type = HitDef
+trigger1 = animelem = 1 || animelem = 5 || animelem =  11 || animelem = 15 || animelem = 19 || animelem = 25
+priority = 5, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = A,SA			;STAND / NORMAL ATTACK
+hitflag = MAF			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = up ; = medium			;2p ANIM
+ground.type = high
+;
+damage = 50,10
+givepower = 100
+;
+pausetime = 12,12
+guard.pausetime = 12,12
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -3,-5
+air.velocity = -3,-5
+guard.velocity = -15
+airguard.velocity = -3,-5
+;
+ground.cornerpush.veloff = -4
+guard.cornerpush.veloff = -4
+;
+sparkxy = -20,-65
+;
+hitsound = 19002,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 40
+;
+fall = 1
+fall.recover = 0
+
+[State 1200,1]
+type = ChangeState
+trigger1 = animtime = 0
+value = 2120
+
+[Statedef 2120]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 2120
+
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 0
+y = 1
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 7
+y = 3
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 14
+y = 5
+[State 1200,1]
+type = VelSet
+trigger1 = time >= 21
+y = 7
+
+[State 1200,1]
+type = ChangeState
+trigger1 = Pos Y >= 0 && Vel Y > 0
+value = 2130
+
+[Statedef 2130]
+type = S
+movetype = A
+physics = S
+velset = 0, 0
+ctrl = 0
+anim = 2130
+
+[State 1200,1]
+type = ChangeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1

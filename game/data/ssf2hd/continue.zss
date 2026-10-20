@@ -1,0 +1,2 @@
+# Shared Ryu-style continue pose; bypass donor-specific continue states.
+[StateDef 19805500; type: S; moveType: I; physics: N; ctrl: 0; anim: 5300; velSet: 0, 0;]

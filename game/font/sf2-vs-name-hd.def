@@ -1,0 +1,10 @@
+[FNT v2]
+fntversion = 2,00
+name = SF2 VS HD italic
+[Def]
+Type = bitmap
+BankType = sprite
+Size = 236,208
+Spacing = -12,0
+Offset = 0,0
+File = sf2-vs-name-hd.sff

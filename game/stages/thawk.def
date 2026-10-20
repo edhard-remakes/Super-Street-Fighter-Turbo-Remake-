@@ -1,0 +1,243 @@
+[Info]
+name = "Thawk HD"
+displayname = "T.Hawk's Stage"
+mugenversion = 1.1
+
+[Camera]
+startx = 0
+starty = 0
+
+boundleft = -1120
+boundright = 1120
+boundhigh = 0
+boundlow = 40
+verticalfollow = 0
+floortension = 290
+
+overdrawhigh 	= 120
+overdrawlow 	= 120
+
+tension = 200
+
+[PlayerInfo]
+p1startx = -430
+p1starty = 0
+p1startz = 0
+p1facing = 1
+p2startx = 430
+p2starty = 0
+p2startz = 0
+p2facing = -1
+
+
+leftbound = -4000 
+rightbound = 4000 
+topbound = 0 
+botbound = 0 
+
+[Scaling]
+topz = 0
+botz = 420
+topscale = 1
+botscale = 1.2
+
+[Bound]
+screenleft 	= 150
+screenright 	= 150
+
+[StageInfo]
+zoffset = 954
+autoturn = 1
+resetBG = 1 
+localcoord = 1920,1080
+
+[Shadow]
+color = 92,92,92 
+yscale = .3
+
+[Music]
+bgmusic = sound/thawk-theme.mp3
+bgmvolume = 100
+
+[BGdef] 
+spr = thawk.sff
+
+
+[BG Sky]
+type  = normal
+spriteno = 0,0
+start = 0,0
+delta = 0,.0
+mask =1
+scalestart= 1.75,1.75
+
+[BG House]
+type  = normal
+spriteno = 0,1
+start = 0,0
+delta = .6, .65
+mask =1
+scalestart= 1.75,1.75
+
+[BG Ground]
+type  = parallax
+spriteno = 1,0
+start = 0,732
+delta = .8, .65
+xscale = 1.2, .8
+yscalestart = 100
+mask =0
+scalestart= 1.75,.5
+
+[BG Watermelons]
+type  = normal
+spriteno = 2,0
+start = 0,0
+delta = .7, .65
+mask =1
+scalestart= 1.2,1.2
+
+[BG Unified crowd]
+type = normal
+spriteno = 4,100
+start = 0,0
+delta = .7,.65
+mask = 1
+scalestart = 1,1
+
+[BG Hats]
+type  = normal
+spriteno = 3,0
+start = 0,0
+delta = .8, .8
+mask =1
+scalestart= 1.2,1.2
+
+[BG Boy]
+type  = anim
+actionno = 3
+start = 0,0
+delta = .8, .8
+mask =1
+scalestart= 1.2,1.2
+
+[BG Merchants]
+type  = anim
+actionno = 1
+start = 0,0
+delta = .8, .8
+mask =1
+scalestart= 1.2,1.2
+
+[BG cactus]
+type  = normal
+spriteno = 3,2
+start = 0,0
+delta = .8, .8
+mask =1
+scalestart= 1.2,1.2
+
+[BG Wall]
+type  = normal
+spriteno = 3,1
+start = 0,0
+delta = .8, .8
+mask =1
+scalestart= 1.2,1.2
+
+[BG Horses]
+type  = anim
+actionno = 2
+start = 0,0
+delta = .8, .8
+mask =1
+scalestart= 1.2,1.2
+
+[BG man4]
+type  = anim
+actionno = 7
+start = 0,200
+delta = .7, .8
+mask =1
+scalestart= 1,1
+
+[BG man5]
+type  = anim
+actionno = 8
+start = 0,200
+delta = .7, .8
+mask =1
+scalestart= .9,.9
+
+[BG man1]
+type  = anim
+actionno = 4
+start = 0,200
+delta = .7, .8
+mask =1
+scalestart= .9,.9
+
+[BG man2]
+type  = anim
+actionno = 5
+start = 0,200
+delta = .7, .8
+mask =1
+scalestart= .9,1
+
+[BG man3]
+type  = anim
+actionno = 6
+start = 0,200
+delta = .7, .8
+mask =1
+scalestart= .9,.9
+
+[Begin Action 1]
+8,0, 0,0, 14
+8,1, 0,0, 14
+8,2, 0,0, 14
+8,1, 0,0, 14
+
+[Begin Action 2]
+12,1, 0,0, 14
+12,2, 0,0, 14
+12,1, 0,0, 14
+12,0, 0,0, 14
+
+[Begin Action 3]
+14,0,0,0,14
+14,1,0,0,12
+14,2,0,0,14
+14,1,0,0,12
+
+[Begin Action 4]
+5,1, 0,0, 14
+5,0, 0,0, 14
+5,1, 0,0, 14
+5,2, 0,0, 14
+
+[Begin Action 5]
+9,0, 0,0, 14
+9,1, 0,0, 14
+9,2, 0,0, 14
+9,1, 0,0, 14
+
+[Begin Action 6]
+11,1, 0,0, 14
+11,2, 0,0, 14
+11,1, 0,0, 14
+11,0, 0,0, 14
+
+[Begin Action 7]
+13,0,0,0,16
+13,1,0,0,12
+13,2,0,0,16
+13,1,0,0,12
+
+[Begin Action 8]
+15,1, 0,0, 14
+15,0, 0,0, 14
+15,1, 0,0, 14
+15,2, 0,0, 14
+

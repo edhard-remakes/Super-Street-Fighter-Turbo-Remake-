@@ -1,0 +1,35 @@
+[Info]
+portraitscale = 0.026315789474
+
+name = "dhalsim"        				
+displayname = "Dhalsim" 
+versiondate = 11,22,2000    
+mugenversion = 1.1
+author = "Fido"         				
+pal.defaults = 1,2,3,4,5,6 
+	
+; Files for the player
+[Files]
+cmd     = SF2_dhalsim.cmd
+stcommon= SF2_common1.cns 
+cns     = SF2_normal.st
+st	= SF2_normal.st 
+st1      = SF2_special.cns
+st2      =SF2_super.cns
+;st3 	= SF2_typer.cns	
+st4 = SF2_throw.st
+st5     = tag_system.cns
+sprite  = SF2_dhalsim.sff 
+anim    = SF2_dhalsim.air 
+sound   = act&sound/SF2_dhalsim.snd 
+pal1    = act&sound/SF2_dhalsim_01.act  
+pal2    = act&sound/SF2_dhalsim_02.act  
+pal3    = act&sound/SF2_dhalsim_03.act  
+pal4    = act&sound/SF2_dhalsim_04.act  
+pal5    = act&sound/SF2_dhalsim_05.act  
+pal6    = act&sound/SF2_dhalsim_06.act  
+
+; Arcade mode
+[Arcade]
+;intro.storyboard = .def
+ending.storyboard =ending\ending.def

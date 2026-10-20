@@ -1,0 +1,67 @@
+[Data]
+power = 3000
+life = 1000
+attack = 100
+defence = 100
+fall.defence_up = 30
+liedown.time = 20
+airjuggle = 15
+juggle = 15
+sparkno = 2
+guard.sparkno  = 40
+KO.echo = 1
+volume = 10
+IntPersistIndex = 60
+FloatPersistIndex = 40
+
+[Size]
+xscale = .2           
+yscale = .2           
+ground.back = 20
+ground.front = 20
+air.back = 20
+air.front = 20
+z.width = 3          
+height = 60	     
+attack.dist = 160
+proj.attack.dist = 90
+proj.doscale = 1
+head.pos = -5, -90
+mid.pos = -5, -60
+shadowoffset = 0
+draw.offset = 0,0
+
+[Velocity]
+walk.fwd  = 4
+walk.back = -3.5
+run.fwd  =  0
+run.back = 0
+jump.neu = 0,-12
+jump.back = -4
+jump.fwd = 3.5
+runjump.back = -3.5,-9.5
+runjump.fwd = 4,-9.5
+airjump.neu = 0,-8.1
+airjump.back = -2.55
+airjump.fwd = 2.5
+
+[Movement]
+airjump.num = 0
+airjump.height = 35
+yaccel = .68				;.44 is default	1 is light and bigger is faster
+stand.friction =.82				; .85  
+crouch.friction =.82			; .82 
+
+
+[Quotes]
+victory1 = "That's Right, fall to your knees... just like every other who dared challenge me!"
+victory2 = "That's Right, fall to your knees... just like every other who dared challenge me!"
+victory3 = "Thought you could take me, huh? You're just like all the rest... Weak!"
+victory4 = "What's the matter? Too many kicks to the head?"
+victory5 = "There is no chance for you to beat me! Challenge someone else!"
+victory6 = "The worlds greatest fighter has no time for losers!"
+victory7 = "What's the matter? Too many kicks to the head?"
+;====================================================================================================
+
+
+

@@ -1,0 +1,9 @@
+build/
+dist/
+__pycache__/
+game/save/stats.json
+game/save/replays/
+*.log
+
+runtime/
+game/save/config-cache.json

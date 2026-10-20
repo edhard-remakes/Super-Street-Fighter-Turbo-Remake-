@@ -1,0 +1,647 @@
+;honda
+;===================================================================================================================
+[Statedef 2000]
+type = S
+movetype = A
+physics = S
+velset = 0, 0
+ctrl = 0
+anim = 2000
+juggle = 0
+
+[State 1000, playsnd]
+type = Poweradd
+trigger1 = time = 0
+value = -3000
+
+[State 3020,SuperPause]
+type = SuperPause
+trigger1 = Time = 0
+time = 30
+anim = 100
+sound = S6,1
+pos = -10,-60
+movetime = 0
+darken = 1
+unhittable = 1
+
+[State 3075,AfterImage]
+type = AfterImage
+trigger1 = Time = 0
+time = 30
+length = 16
+palcolor = 256
+palinvertall = 0
+palbright = 30,30,30
+palcontrast = 100,100,220
+palpostbright = 0, 0, 0
+paladd = 10,10,45
+palmul = .65,.65,.85
+timegap = 2
+framegap = 4
+trans = add1
+
+[State 1000, playsnd]
+type = NotHitby
+trigger1 = time < 20
+value = SCA
+
+[State 210,2]
+type = playsnd
+trigger1 = time = 4
+value = 10,3
+
+[State 210,2]
+type = HitDef
+trigger1 = Animelem = 4
+priority = 3, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = S,SA			;STAND / NORMAL ATTACK
+hitflag = MAF			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = back			;2p ANIM
+ground.type = high
+;
+damage = 65,15
+GivePower = 20
+;
+pausetime = 12,12
+guard.pausetime = 12,12
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -3,0
+air.velocity = -3,-2
+guard.velocity = -15
+airguard.velocity = -4,-5
+;
+ground.cornerpush.veloff = -10
+guard.cornerpush.veloff = -10
+;
+sparkxy = 10,-40
+;
+hitsound = 19001,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 40
+;
+fall = 0
+fall.recover = 0
+
+[State 1200,End]
+type = ChangeState
+trigger1 = MoveContact ||  animtime = 0
+value = 2001
+
+[Statedef 2001]
+type = A
+movetype = A
+physics = N
+anim = 2001
+velset =11, 0
+ctrl = 0
+juggle = 0
+
+[State 1215,Posset]
+type = posset
+trigger1 = time >= 0
+y = -55
+
+[State 1215,Posset]
+type = posset
+trigger1 = time >= 35
+trigger2 = MoveContact
+y = 0
+
+[State 210,2]
+type = HitDef
+trigger1 = time = 0
+priority = 3, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = S,SA			;STAND / NORMAL ATTACK
+hitflag = MAF			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = back			;2p ANIM
+ground.type = high
+;
+damage = 65,10
+GivePower = 20
+;
+pausetime = 12,12
+guard.pausetime = 12,12
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -3,0
+air.velocity = -3,-2
+guard.velocity = -15
+airguard.velocity = -4,-5
+;
+ground.cornerpush.veloff = -10
+guard.cornerpush.veloff = -10
+;
+sparkxy = 0,0
+;
+juggle = 0
+hitsound = 19001,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 40
+;
+fall = 0
+fall.recover = 0
+
+[State 1200,End]
+type = ChangeState
+trigger1 = MoveContact
+value = 2002
+
+[State 1215,ChangeState]
+type = ChangeState
+trigger1 = time = 35
+trigger2 = FrontEdgeBodyDist <= 10
+value = 2005
+ctrl = 0
+
+
+;===================================================================================================================
+[Statedef 2002]
+type = S
+movetype = A
+physics = S
+velset = 0, 0
+ctrl = 0
+anim = 2000
+
+[State 3075,AfterImage]
+type = AfterImage
+trigger1 = Time = 0
+time = 30
+length = 16
+palcolor = 256
+palinvertall = 0
+palbright = 30,30,30
+palcontrast = 100,100,220
+palpostbright = 0, 0, 0
+paladd = 10,10,45
+palmul = .65,.65,.85
+timegap = 2
+framegap = 4
+trans = add1
+
+[State 210,2]
+type = playsnd
+trigger1 = time = 4
+value = 10,3
+
+[State 210,2]
+type = HitDef
+trigger1 = Animelem = 4
+priority = 3, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = S,SA			;STAND / NORMAL ATTACK
+hitflag = MAF			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = back			;2p ANIM
+ground.type = high
+;
+damage = 65,15
+GivePower = 20
+;
+pausetime = 12,12
+guard.pausetime = 12,12
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -3,0
+air.velocity = -3,-2
+guard.velocity = -15
+airguard.velocity = -4,-5
+;
+ground.cornerpush.veloff = -10
+guard.cornerpush.veloff = -10
+;
+sparkxy = 10,-40
+;
+juggle = 0
+hitsound = 19001,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 40
+;
+fall = 0
+fall.recover = 0
+
+[State 1200,End]
+type = ChangeState
+trigger1 = MoveContact || animtime = 0
+value = 2004
+
+[Statedef 2004]
+type = A
+movetype = A
+physics = N
+anim = 2001
+velset =11, 0
+ctrl = 0
+
+[State 1215,Posset]
+type = posset
+trigger1 = time >= 0
+y = -55
+
+[State 1215,Posset]
+type = posset
+trigger1 = time >= 35
+trigger2 = MoveContact
+y = 0
+
+[State 210,2]
+type = HitDef
+trigger1 = time = 0
+priority = 3, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = S,SA			;STAND / NORMAL ATTACK
+hitflag = MAF			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = back			;2p ANIM
+ground.type = high
+;
+damage = 65,10
+GivePower = 20
+;
+pausetime = 12,12
+guard.pausetime = 12,12
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -2,-8
+air.velocity = -2,-8
+guard.velocity = -15
+airguard.velocity = -4,-5
+;
+ground.cornerpush.veloff = -10
+guard.cornerpush.veloff = -10
+;
+sparkxy = 0,0
+;
+juggle = 0
+hitsound = 19001,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 40
+;
+fall = 1
+fall.recover = 0
+
+[State 1200,End]
+type = ChangeState
+trigger1 = MoveContact
+value = 2006
+
+[State 1215,ChangeState]
+type = ChangeState
+trigger1 = time = 35
+trigger2 = FrontEdgeBodyDist <= 10
+value = 2005
+ctrl = 0
+
+
+[Statedef 2005]
+type = A
+movetype = A
+physics = N
+anim = 2005
+velset = 0, 0
+ctrl = 0
+
+[State 1215,statetypeset]
+type = statetypeset
+trigger1 = time >= 7
+statetype = C
+
+[State 1215,statetypeset]
+type = Posset
+trigger1 = time = 0
+y = 0
+
+[State 1215,statetypeset]
+type = Posset
+trigger1 = animelem = 4
+y = 0
+
+[State 1215,ChangeState]
+type = ChangeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+[Statedef 2006]
+type = A
+movetype = A
+physics = N
+anim = 2005
+velset = -6, 0
+ctrl = 0
+
+[State 1215,statetypeset]
+type = velset
+trigger1 = time >= 7
+x = 0
+
+[State 1215,statetypeset]
+type = statetypeset
+trigger1 = time >= 7
+statetype = C
+
+[State 1215,statetypeset]
+type = Posset
+trigger1 = animelem = 4
+y = 0
+
+[State 1215,ChangeState]
+type = ChangeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+
+;===================================================================================================================
+[Statedef 2100]
+type = S
+movetype = A
+physics = S
+velset = 0, 0
+ctrl = 0
+anim = 2100
+
+[State 1000, playsnd]
+type = Poweradd
+trigger1 = time = 0
+value = -3000
+
+[State 3020,SuperPause]
+type = SuperPause
+trigger1 = Time = 0
+time = 30
+anim = 100
+sound = S6,1
+pos = -10,-60
+movetime = 0
+darken = 1
+unhittable = 1
+
+[State 3075,AfterImage]
+type = AfterImage
+trigger1 = Time = 0
+time = 30
+length = 16
+palcolor = 256
+palinvertall = 0
+palbright = 30,30,30
+palcontrast = 100,100,220
+palpostbright = 0, 0, 0
+paladd = 10,10,45
+palmul = .65,.65,.85
+timegap = 2
+framegap = 4
+trans = add1
+
+[State 1000, playsnd]
+type = NotHitby
+trigger1 = time < 20
+value = SCA
+
+[State 1215,ChangeState]
+type = ChangeState
+trigger1 = animtime = 0
+value = 2110
+
+[Statedef 2110]
+type = A
+movetype = A
+physics = N
+velset = 18,-15
+ctrl = 0
+anim = 2110
+juggle = 0
+
+[State 210,2]
+type = velset
+trigger1 = time >= 4
+x = 13
+y = -10
+[State 210,2]
+type = velset
+trigger1 = time >= 6
+x = 10
+y = -6
+[State 210,2]
+type = velset
+trigger1 = time >= 9
+x = 7
+y = -4
+[State 210,2]
+type = velset
+trigger1 = time >= 10
+x = 5
+y = -2
+
+[State 210,2]
+type = playsnd
+trigger1 = time = 0
+value = 10,1
+
+[State 210,2]
+type = nothitby
+trigger1 = time <= 8
+value = SCA
+
+[State 210,2]
+type = HitDef
+trigger1 = Animelem = 2 || animelem = 3
+priority = 5, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = A,NA			;STAND / NORMAL ATTACK
+hitflag = MAF			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = back			;2p ANIM
+ground.type = high
+;
+damage = 80,10
+GivePower = 60
+;
+pausetime = 12,12
+guard.pausetime = 12,12
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -3,-10
+air.velocity = -3,-6
+guard.velocity = -12
+;
+ground.cornerpush.veloff = -5
+guard.cornerpush.veloff = -5
+;
+sparkxy = 10,-40
+;
+hitsound = 19001,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 40
+;
+fall = 1
+fall.recover = 0
+
+[State 1200,End]
+type = ChangeState
+trigger1 = time >= 12
+value = 2111
+
+[Statedef 2111]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 2120
+
+[State 1200,End]
+type = ChangeState
+trigger1 = animtime = 0
+value = 2130
+
+;-------------------------------------------------------------------------------------------------
+[Statedef 2130]
+type = A
+movetype = A
+physics = N
+velset = 0, 2
+ctrl = 0
+anim = 2130
+
+[State 210,2]
+type = velset
+trigger1 = time >= 2
+y = 4
+[State 210,2]
+type = velset
+trigger1 = time >= 6
+y = 5
+[State 210,2]
+type = velset
+trigger1 = time >= 9
+y = 7
+[State 210,2]
+type = velset
+trigger1 = time >= 12
+y = 10
+
+[State 210,2]
+type = HitDef
+trigger1 = Animelem = 3 || animelem = 4
+priority = 5, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = A,NA			;STAND / NORMAL ATTACK
+hitflag = MAF			;MIDDLE ATTACK
+guardflag = HA			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = back			;2p ANIM
+ground.type = high
+;
+damage = 80,10
+GivePower = 60
+;
+pausetime = 12,12
+guard.pausetime = 12,12
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -2,-6
+air.velocity = -2,-3
+guard.velocity = -12
+;
+ground.cornerpush.veloff = -25
+guard.cornerpush.veloff = -25
+;
+sparkxy = 0,-30
+;
+juggle = 0
+hitsound = 19001,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 40
+;
+fall = 1
+fall.recover = 0
+
+[State 1200,End]
+type = ChangeState
+trigger1 = Pos Y >= 0 && Vel Y > 0
+value = 2140
+
+[Statedef 2140]
+type = S
+movetype = A
+physics = S
+velset = 0, 0
+ctrl = 0
+anim = 2140
+
+[State 1200,End]
+type = posset
+trigger1 = time >= 0
+y =0
+
+[State 1200,End]
+type = ChangeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1

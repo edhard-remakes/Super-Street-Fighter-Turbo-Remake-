@@ -1,0 +1,14 @@
+; HD Remix fake Hadouken. No HitDef, Helper or Projectile.
+[Statedef 18100]
+type = S
+movetype = A
+physics = S
+anim = 18100
+ctrl = 0
+velset = 0,0
+poweradd = 0
+[State 18100, complete]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1

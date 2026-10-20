@@ -1,0 +1,37 @@
+[Info]
+portraitscale = 0.031914893617
+name = "honda"        				
+displayname = "E.Honda" 
+versiondate = 11,22,2000    
+mugenversion = 11,22,2000
+author = "Fido"         				
+pal.defaults = 6,3,4,2  
+	
+; Files for the player
+[Files]
+cmd     = SF2_honda.cmd
+stcommon= SF2_common1.cns 
+cns     = SF2_normal.st
+st	= SF2_normal.st 
+st1      = SF2_special.cns
+st2      =SF2_super.cns
+sprite  = SF2_honda.sff 
+anim    = SF2_honda.air 
+sound   = act&sound/SF2_honda.snd 
+pal1    = act&sound/SF2_honda_01.act  
+pal2    = act&sound/SF2_honda_02.act  
+pal3    = act&sound/SF2_honda_03.act  
+;pal4    = act&sound/SF2_honda_04.act  
+;pal5    = act&sound/SF2_honda_05.act  
+;pal6    = act&sound/SF2_honda_06.act  
+pal7    = act&sound/SF2_honda_01.act  
+pal8    = act&sound/SF2_honda_02.act  
+pal9    = act&sound/SF2_honda_03.act  
+;pal10   = act&sound/SF2_honda_04.act  
+;pal11   = act&sound/SF2_honda_05.act  
+;pal12   = act&sound/SF2_honda_06.act  
+
+; Arcade mode
+[Arcade]
+;intro.storyboard = .def
+ending.storyboard =ending\ending.def

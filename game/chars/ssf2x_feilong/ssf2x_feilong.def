@@ -1,0 +1,22 @@
+[Info]
+portraitscale = 0.096000000000
+Name         ="feilong"
+DisplayName  ="Fei Long"
+VersionDate  =03,23,2011
+MugenVersion =04,14,2002
+Author       ="G.D.T"
+Pal.Defaults =4,1,3,6
+
+[Files]
+Cmd     =feilong.cmd
+Cns     =feilong.cns
+St      =feilong.cns
+st1=option.txt
+StCommon =common1.cns
+Sprite  =feilong.sff
+Anim    =feilong.air
+Sound   = feilong.snd
+
+[Arcade]
+Intro.Storyboard =
+Ending.Storyboard =

@@ -1,0 +1,233 @@
+[Statedef 2600]
+type = S
+movetype = A
+physics = S
+anim = 3600
+velset = 0, 0
+ctrl = 0
+poweradd = -3000
+juggle = 15
+
+[State 3600,Muteki]
+type = NotHitBy
+trigger1 = time >= 0
+value = SCA
+
+[State 3020,SuperPause]
+type = SuperPause
+trigger1 = Time = 1
+time = 30
+anim = F 30
+sound =  6,1
+pos = 17,-96
+movetime = 0
+darken = 1
+unhittable = 1
+
+[State 3075,AfterImage]
+type = AfterImage
+trigger1 = Time = 0
+time = 999
+length = 16
+palcolor = 256
+palinvertall = 0
+palbright = 30,30,30
+palcontrast = 100,100,220
+palpostbright = 0, 0, 0
+paladd = 10,10,45
+palmul = .65,.65,.85
+timegap = 2
+framegap = 4
+trans = add1
+
+[State 3600,PlaySnd]
+type = PlaySnd
+trigger1 = AnimElem = 2
+value = 22,22
+
+[State 3600,HitDef]
+type = HitDef
+trigger1 = AnimElem = 3
+attr = S, HA
+damage    = 150,10
+animtype = Hard
+getpower = 0
+givepower = 60
+guardflag = M
+hitflag = MAF
+pausetime = 20,20
+sparkno = 2
+guard.sparkno = 3
+sparkxy = -10,-65
+hitsound = 7,1
+guardsound = 3,1
+ground.type = High
+ground.slidetime = 15
+ground.hittime  = 15
+ground.velocity =-3,-6
+guard.velocity = -12
+air.velocity = 2,-11
+;
+guard.ctrltime = 35
+guard.hittime = 25
+;
+fall = 1
+fall.recover = 0
+air.recover = 0
+recover = 0
+P2stateno = 2615
+P1stateno = 2610
+
+[State 3600,AfterImageTime]
+type = AfterImageTime
+trigger1 = AnimTime = 0
+time = 0
+
+[State 3600,End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+[Statedef 2610]
+type = S
+movetype = A
+physics = S
+anim = 3610
+
+[State 1220,EnvShake]
+type = EnvShake
+trigger1 = time = 0
+time = 28
+[State 1220,EnvShake]
+type = EnvShake
+trigger1 = time = 50
+time = 28
+
+[State 3610,AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = NoAutoTurn
+
+[State 3610,PosFreeze]
+type = PosFreeze
+trigger1 = 1
+
+[State 3610,Muteki]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+
+[State 3600,PlaySnd]
+type = PlaySnd
+trigger1 = AnimElem = 16
+value = 4,1
+
+[State 3610,AfterImageTime]
+type = AfterImageTime
+trigger1 = AnimTime = 0
+time = 0
+
+[State 1310,TargetBind]
+type = TargetBind
+trigger1 = AnimElem = 1
+pos = 100,0
+time = 10
+
+[State 3600,HitDef]
+type = HitDef
+trigger1 = AnimElem = 13
+attr = S, HA
+damage    = 200
+animtype = Hard
+getpower = 0
+givepower = 60
+guardflag = -1
+hitflag = MAF
+pausetime = 30,30
+sparkno = 2
+guard.sparkno = 3
+sparkxy = -10,-65
+hitsound = 7,1
+guardsound = 3,1
+ground.type = High
+ground.slidetime = 15
+ground.hittime  = 15
+ground.velocity =-3,-8
+guard.velocity = -12
+air.velocity =-2,-4
+;
+guard.ctrltime = 17
+guard.hittime = 17
+;
+fall = 1
+fall.recover = 0
+air.recover = 0
+recover = 0
+
+[State 3610,End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;----------------------------------------------------------------------------
+[Statedef 2615]
+type = A
+movetype = H
+physics = N
+velset = 0, 0
+ctrl = 0
+
+[State 910, 0]
+type = Velset
+Trigger1 = time >= 20
+x = 3
+y = -10
+[State 910, 0]
+type = Velset
+Trigger1 = time >= 40
+y = -6
+[State 910, 0]
+type = Velset
+Trigger1 = time >= 45
+y = -3
+[State 910, 0]
+type = Velset
+Trigger1 = time >= 50
+y = -1
+[State 910, 0]
+type = Velset
+Trigger1 = time >= 55
+x = 2
+y = 3
+[State 910, 0]
+type = Velset
+Trigger1 = time >= 60
+y = 6
+[State 910, 0]
+type = Velset
+Trigger1 = time >= 65
+y = 8
+
+[State 910, 0]
+type = ChangeAnim
+triggerall = SelfAnimExist(19203615)
+Trigger1 = Time = 0 
+value = 19203615
+
+[State 910, 0]
+type = ChangeAnim2
+triggerall = !SelfAnimExist(19203615)
+Trigger1 = Time = 0 
+value = 3615
+
+[State 1215,SprPriority]
+type = SprPriority
+trigger1 = time >= 0
+value = -1
+
+[State 1335,SelfState]
+type = SelfState
+trigger1 = Vel Y > 0 && Pos Y >= 0
+value = 5100

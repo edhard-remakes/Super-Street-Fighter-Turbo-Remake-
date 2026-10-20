@@ -1,0 +1,10 @@
+[FNT v2]
+fntversion = 2,00
+name = SSF2 HD small
+[Def]
+Type = truetype
+Size = 18,36
+Spacing = 1,0
+Offset = 0,0
+File = timesbd.ttf
+Blend = 1

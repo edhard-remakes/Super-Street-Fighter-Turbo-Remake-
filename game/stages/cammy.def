@@ -1,0 +1,424 @@
+[Info]
+name = "Cammy HD"
+displayname = "Cammy's Stage"
+versiondate = 01/19/16
+mugenversion = 1.1
+author = "Parse"
+
+[Camera]
+startx 		= 0
+starty 		= 0
+boundleft 	= -736;-830
+boundright 	= 736
+boundhigh = 0
+boundlow  	= 0
+tension 	          = 200
+verticalfollow = 0
+floortension 	= 290
+overdrawhigh 	= 120
+overdrawlow 	= 120
+cuthigh 	          = 0
+cutlow              = 0
+
+[PlayerInfo]
+p1startx 	= -430
+p1starty 	= 0
+p1facing 	= 1
+p2startx 	= 430
+p2starty 	= 0
+p2facing 	= -1
+p3startx 	= -400
+p3starty 	= 0
+p3facing 	= 1
+p4startx 	= 400
+p4starty 	= 0
+p4facing 	= -1
+leftbound 	= -4000
+rightbound 	= 4000
+
+[Bound]
+screenleft 	= 150
+screenright 	= 150
+
+[StageInfo]
+zoffset 	= 966
+autoturn 	= 1
+resetBG 	= 0
+localcoord 	= 1920,1080
+xscale 		= .952
+yscale 		= 1
+
+[Scaling]
+topz     	= 0
+botz     	= 50
+topscale 	= 1
+botscale 	= 1.2
+
+[Shadow]
+intensity = 190
+color = 0,0,0
+yscale = -0.100
+fade.range = -150,-10
+xshear = -.2
+
+[Music]
+bgmusic = sound/cammy-theme.mp3
+
+
+bgmvolume = 100
+
+[BGdef]
+spr = cammy.sff
+debugbg = 0
+
+[BG Far_BG]
+type = normal
+spriteno = 0,0
+start = -147,1156
+mask = 0
+delta = .303, 1
+scalestart = 1.387,1.288
+
+[BG House]
+type  = anim
+actionno = 8
+start = -147,1156
+mask = 0
+delta = .303, 1
+scalestart = 1.387,1.288
+
+[BG city]
+type  = anim
+actionno = 9
+start = -147,1156
+mask = 0
+delta = .303, 1
+scalestart = 1.387,1.288
+
+[BG Aurora]
+type  = anim
+actionno = 1
+start = -20,282
+mask = 1
+delta = .43, 1
+scalestart = 1.368,1.11
+
+[BG Mid_BG_L]
+type = normal
+spriteno = 1,0
+start = -1014,1106
+mask = 1
+delta = .717, 1
+scalestart = .971,1.123
+
+[BG Mid_BG_R]
+type = normal
+spriteno = 2,0
+start = 967,1119
+mask = 1
+delta = .717, 1
+scalestart = 1.025,1.1375
+
+[BG Front_BG_R]
+type = normal
+spriteno = 3,0
+start = 1239,912
+mask = 1
+delta = .862, 1
+scalestart = .981,1.379
+
+[BG Crow_R]
+type  = anim
+actionno = 5
+start = 1326,585
+mask = 1
+delta = .862, 1
+scalestart = 1.721,1.839
+
+;--------------------------------------------------------
+[BG Crow_R2]
+type  = anim
+actionno = 6
+start = 1326,585
+mask = 1
+delta = .862, 1
+scalestart = 1.721,1.839
+ID = 1
+
+[BGCtrlDef Crow_R2]
+looptime = 2600
+ctrlID = 1
+
+[BGCtrl Crow_R2]
+type = posset
+time = 0
+x = 0
+y = 0
+
+[BGCtrl Crow_R2]
+type = Veladd
+time = 1820
+x = -22
+y = -3.9
+
+[BGCtrl Crow_R2]
+type = Velset
+time = 2580
+x = 0
+y = 0
+;--------------------------------------------------------
+[BG Crow_R3]
+type  = anim
+actionno = 4
+start = 1736, 355;1796,355
+mask = 1
+delta = .862, 1;.94, 1
+scalestart = 1.721,1.839
+ID = 2
+
+[BGCtrlDef Crow_R3]
+looptime = 2600
+ctrlID = 2
+
+[BGCtrl Crow_R3]
+type = posset
+time = 0
+x = 0
+y = 0
+
+[BGCtrl Crow_R3]
+type = Veladd
+time = 2580
+x = -22
+y = 14
+
+[BGCtrl Crow_R3]
+type = Velset
+time = 2599
+x = 0
+y = 0
+;--------------------------------------------------------
+
+;[BG Front_BG_bridge]
+;type = normal
+;spriteno = 4,0
+;start = -2,1173
+;mask = 1
+;delta = 1, 1
+;scalestart = 1.104,1.03
+
+[BG Front_BG_bridge_parallax_joint]
+type = parallax
+spriteno = 4,1
+start = -502,1173
+mask = 1
+delta = .94, 1
+width = 3311, 3811;2971, 3400
+xscale = 1, 1.1
+scalestart = 1.104,1.03
+
+[BG Front_BG_bridge_parallax]
+type = parallax
+spriteno = 4,1
+start = -2,1173
+mask = 1
+delta = .94, 1
+width = 3311, 3811;2971, 3400
+xscale = 1, 1.1
+scalestart = 1.104,1.03
+
+[BG Front_BG_bridge2_joint]
+type = normal
+spriteno = 4,2
+start = -502,1172
+mask = 1
+delta = 1.08, 1
+scalestart = 1.222,1.03
+
+[BG Front_BG_bridge2]
+type = normal
+spriteno = 4,2
+start = -2,1172
+mask = 1
+delta = 1.08, 1
+scalestart = 1.222,1.03
+
+[BG Crow_L]
+type  = anim
+actionno = 2
+start = -1390,936
+mask = 1
+delta = .94, 1
+scalestart = 1.721,1.839
+;--------------------------------------------------------
+[BG Crow_L2]
+type  = anim
+actionno = 3
+start = -1390,936
+mask = 1
+delta = .94, 1
+scalestart = 1.721,1.839
+ID = 3
+
+[BGCtrlDef Crow_L2]
+looptime = 2600
+ctrlID = 3
+
+[BGCtrl Crow_L2]
+type = posset
+time = 0
+x = 0
+y = 0
+
+[BGCtrl Crow_L2]
+type = Veladd
+time = 1980
+x = 22
+y = -3.9
+
+[BGCtrl Crow_L2]
+type = Velset
+time = 2580
+x = 0
+y = 0
+
+;--------------------------------------------------------
+[BG Crow_L3]
+type  = anim
+actionno = 4
+start = -1800,736
+mask = 1
+delta = .94, 1
+scalestart = 1.721,1.839
+ID = 4
+
+[BGCtrlDef Crow_L3]
+looptime = 2600
+ctrlID = 4
+
+[BGCtrl Crow_L3]
+type = posset
+time = 0
+x = 0
+y = 0
+
+[BGCtrl Crow_L3]
+type = Veladd
+time = 2580
+x = 22
+y = 14
+
+[BGCtrl Crow_L3]
+type = Velset
+time = 2599
+x = 0
+y = 0
+;--------------------------------------------------------
+[Begin Action 1] ; aurora
+5,0, 0,0, 16
+5,1, 0,0, 16
+5,2, 0,0, 16
+5,3, 0,0, 16
+5,2, 0,0, 16
+5,1, 0,0, 16
+
+[Begin Action 2] ; crown_L
+7,0, 0,0, 1800
+7,1, 0,0, 180
+7,4, 0,0, 620
+
+[Begin Action 3] ; crown_L2
+7,4, 0,0, 1980
+7,2, 0,0, 8
+7,3, 0,0, 8
+7,2, 0,0, 8
+7,3, 0,0, 8
+7,2, 0,0, 8
+7,3, 0,0, 8
+7,2, 0,0, 8
+7,3, 0,0, 8
+7,2, 0,0, 8
+7,3, 0,0, 8
+7,2, 0,0, 8
+7,3, 0,0, 8
+7,2, 0,0, 8
+7,3, 0,0, 8
+7,2, 0,0, 8
+7,3, 0,0, 8
+7,2, 0,0, 8
+7,3, 0,0, 8
+7,2, 0,0, 8
+7,3, 0,0, 8
+7,2, 0,0, 8
+7,3, 0,0, 8
+7,2, 0,0, 8
+7,3, 0,0, 8
+7,2, 0,0, 8
+7,3, 0,0, 8
+7,2, 0,0, 8
+7,3, 0,0, 8
+7,2, 0,0, 8
+7,3, 0,0, 8
+7,2, 0,0, 8
+7,3, 0,0, 8
+7,2, 0,0, 364
+
+[Begin Action 4] ; crown_L3
+7,4, 0,0, 2580
+7,2, 0,0, 8
+7,3, 0,0, 8
+7,2, 0,0, 4
+
+[Begin Action 5] ; crown_R
+6,0, 0,0, 1800
+6,1, 0,0, 20
+6,4, 0,0, 780
+
+[Begin Action 6] ; crown_R2
+6,4, 0,0, 1820
+6,2, 0,0, 8
+6,3, 0,0, 8
+6,2, 0,0, 8
+6,3, 0,0, 8
+6,2, 0,0, 8
+6,3, 0,0, 8
+6,2, 0,0, 8
+6,3, 0,0, 8
+6,2, 0,0, 8
+6,3, 0,0, 8
+6,2, 0,0, 8
+6,3, 0,0, 8
+6,2, 0,0, 8
+6,3, 0,0, 8
+6,2, 0,0, 8
+6,3, 0,0, 8
+6,2, 0,0, 8
+6,3, 0,0, 8
+6,2, 0,0, 8
+6,3, 0,0, 8
+6,2, 0,0, 8
+6,3, 0,0, 8
+6,2, 0,0, 8
+6,3, 0,0, 8
+6,2, 0,0, 8
+6,3, 0,0, 8
+6,2, 0,0, 8
+6,3, 0,0, 8
+6,2, 0,0, 8
+6,3, 0,0, 8
+6,2, 0,0, 8
+6,3, 0,0, 8
+6,2, 0,0, 524
+
+[Begin Action 7] ; crown_R3
+6,4, 0,0, 2580
+6,2, 0,0, 8
+6,3, 0,0, 8
+6,2, 0,0, 4
+
+[Begin Action 8] ; fixed house perspective
+9,0, 0,0, -1
+
+[Begin Action 9] ; fixed city perspective
+8,0, 0,0, -1
+

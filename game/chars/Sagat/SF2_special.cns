@@ -1,0 +1,2076 @@
+;SF2_SAGAT
+;===================================================================================================================
+[Statedef 1000]
+type = S
+movetype = A
+physics = S
+velset = 0, 0
+ctrl = 0
+anim = 1000
+poweradd = 100
+
+
+[State 210,2]
+type = playsnd
+trigger1 = time = 0
+value = 10,1
+[State 210,2]
+type = playsnd
+trigger1 = time = 0
+value = 0,3
+
+[State 1200, Projectile]
+type = Projectile
+trigger1 = animelem = 3
+ProjID = 1000
+projanim = 1030
+projhitanim = 1040
+;projremanim = 1202
+attr = S, NP
+damage   = 60,10
+animtype = high
+guardflag = MA
+hitflag = MA
+sparkno = -1
+guard.sparkno = -1
+pausetime = 12,12
+hitsound = 19001,2
+guardsound = 19003,0
+ground.type = High
+ground.slidetime = 30
+ground.hittime  = 20
+ground.velocity = -12
+air.animtype = Back
+air.velocity = -3,-5
+;
+guard.velocity = -12
+guard.ctrltime = 16
+;
+air.juggle = 3
+air.fall = 1
+fall.recover = 0
+;
+;projcancelanim = anim_no (int)
+;    Specifies the animation action number to play when the projectile 
+;    is cancelled by hitting another projectile. If omitted, 
+;    projremanim is used instead.
+projscale = 1,.7
+projremove = 1
+;    Set to a nonzero value to have the projectile be removed after it 
+;    hits, or to 0 to disable this behavior. Defaults to 1.
+projremovetime = -1
+;    Specifies the number of ticks after which the projectile should be 
+;    removed from the screen. Defaults to -1 (never time out).
+velocity = 3.7,0
+accel = 0,0
+;    Specifies the acceleration to apply to the projectile in the x and 
+;    y directions. Defaults to 0,0 if omitted.
+;velmul = x_mul, y_mul (float)
+;    Specifies x and y velocity multipliers. The projectile's velocity 
+;    is multiplied by these multipliers on every tick. The multipliers 
+;    default to 1 if omitted.
+projhits = 1
+projmisstime = 0
+;    If the projectile does multiple hits, specifies the least number 
+;    of ticks that must elapse between hits. Defaults to 0, but you 
+;    will most likely need a nonzero value.
+projpriority = 3
+;    Specifies the projectile priority. If the projectile collides with
+;    another projectile of equal priority, they will cancel. If it 
+;    collides with another of lower priority, it will cancel the lower-
+;    priority projectile, and the higher-priority one will have its
+;    priority decreased by 1.
+;    Defaults to 1. 
+projsprpriority =3
+;    Specifies the sprite priority of the projectile. Higher-priority 
+;    sprites are drawn on top of lower-priority sprites. Defaults to 3.
+offset = 110,-80
+;    Specifies the x and y offsets at which the projectile should be 
+;    created. Both parameters default to 0 if omitted. The exact 
+;    behavior of the offset parameters is dependent on the postype.
+postype = p1
+;p1
+;      - p2
+;      - front
+;      - back
+;      - left
+;      - right
+projshadow = 0,0,0 
+;    Specifies the R, G, and B components of the projectile's shadow.
+;    These components should be integers between 0 and 255, 
+;    inclusive. If shad_r evaluates to -1, then the stage's shadow
+;    color will be used. The higher a component value, the less of
+;    that color is displayed in the shadow. So a perfectly black shadow
+;    is 255,255,255. Defaults to 0,0,0 (no shadow).
+;supermovetime = 0
+;    Determines the number of ticks that the projectile should be 
+;    "unfrozen" during a SuperPause. Defaults to 0.
+;pausemovetime = move_time (int)
+;afterimage.time = 0
+
+[State 1200,End]
+type = ChangeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;===================================================================================================================
+[Statedef 1010]
+type = S
+movetype = A
+physics = S
+velset = 0, 0
+ctrl = 0
+anim = 1010
+poweradd = 100
+[State 210,2]
+type = playsnd
+trigger1 = time = 0
+value = 10,1
+[State 210,2]
+type = playsnd
+trigger1 = time = 0
+value = 0,3
+
+[State 1200, Projectile]
+type = Projectile
+trigger1 = animelem = 3
+ProjID = 1000
+projanim = 1030
+projhitanim = 1040
+;projremanim = 1202
+attr = S, NP
+damage   = 60,10
+animtype = high
+guardflag = MA
+hitflag = MA
+sparkno = -1
+guard.sparkno = -1
+pausetime = 12,12
+hitsound = 19001,2
+guardsound = 19003,0
+ground.type = High
+ground.slidetime = 30
+ground.hittime  = 20
+ground.velocity = -12
+air.animtype = Back
+air.velocity = -3,-5
+;
+guard.velocity = -12
+guard.ctrltime = 17
+;
+air.juggle = 3
+air.fall = 1
+fall.recover = 0
+;
+;projcancelanim = anim_no (int)
+;    Specifies the animation action number to play when the projectile 
+;    is cancelled by hitting another projectile. If omitted, 
+;    projremanim is used instead.
+projscale = 1,.7
+projremove = 1
+;    Set to a nonzero value to have the projectile be removed after it 
+;    hits, or to 0 to disable this behavior. Defaults to 1.
+projremovetime = -1
+;    Specifies the number of ticks after which the projectile should be 
+;    removed from the screen. Defaults to -1 (never time out).
+velocity = 5.6,0
+accel = 0,0
+;    Specifies the acceleration to apply to the projectile in the x and 
+;    y directions. Defaults to 0,0 if omitted.
+;velmul = x_mul, y_mul (float)
+;    Specifies x and y velocity multipliers. The projectile's velocity 
+;    is multiplied by these multipliers on every tick. The multipliers 
+;    default to 1 if omitted.
+projhits = 1
+projmisstime = 0
+;    If the projectile does multiple hits, specifies the least number 
+;    of ticks that must elapse between hits. Defaults to 0, but you 
+;    will most likely need a nonzero value.
+projpriority = 3
+;    Specifies the projectile priority. If the projectile collides with
+;    another projectile of equal priority, they will cancel. If it 
+;    collides with another of lower priority, it will cancel the lower-
+;    priority projectile, and the higher-priority one will have its
+;    priority decreased by 1.
+;    Defaults to 1. 
+projsprpriority =3
+;    Specifies the sprite priority of the projectile. Higher-priority 
+;    sprites are drawn on top of lower-priority sprites. Defaults to 3.
+offset = 110,-80
+;    Specifies the x and y offsets at which the projectile should be 
+;    created. Both parameters default to 0 if omitted. The exact 
+;    behavior of the offset parameters is dependent on the postype.
+postype = p1
+;p1
+;      - p2
+;      - front
+;      - back
+;      - left
+;      - right
+projshadow = 0,0,0 
+;    Specifies the R, G, and B components of the projectile's shadow.
+;    These components should be integers between 0 and 255, 
+;    inclusive. If shad_r evaluates to -1, then the stage's shadow
+;    color will be used. The higher a component value, the less of
+;    that color is displayed in the shadow. So a perfectly black shadow
+;    is 255,255,255. Defaults to 0,0,0 (no shadow).
+;supermovetime = 0
+;    Determines the number of ticks that the projectile should be 
+;    "unfrozen" during a SuperPause. Defaults to 0.
+;pausemovetime = move_time (int)
+;afterimage.time = 0
+
+[State 1200,End]
+type = ChangeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;===================================================================================================================
+[Statedef 1020]
+type = S
+movetype = A
+physics = S
+velset = 0, 0
+ctrl = 0
+anim = 1020
+poweradd = 100
+[State 210,2]
+type = playsnd
+trigger1 = time = 0
+value = 10,1
+[State 210,2]
+type = playsnd
+trigger1 = time = 0
+value = 0,3
+
+[State 1200, Projectile]
+type = Projectile
+trigger1 = animelem = 3
+ProjID = 1000
+projanim = 1030
+projhitanim = 1040
+;projremanim = 1202
+attr = S, NP
+damage   = 60,10
+animtype = high
+guardflag = MA
+hitflag = MA
+sparkno = -1
+guard.sparkno = -1
+pausetime = 12,12
+hitsound = 19001,2
+guardsound = 19003,0
+ground.type = High
+ground.slidetime = 30
+ground.hittime  = 15
+ground.velocity = -12
+air.animtype = Back
+air.velocity = -3,-5
+;
+guard.velocity = -12
+guard.ctrltime = 17
+;
+air.juggle = 3
+air.fall = 1
+fall.recover = 0
+;
+;projcancelanim = anim_no (int)
+;    Specifies the animation action number to play when the projectile 
+;    is cancelled by hitting another projectile. If omitted, 
+;    projremanim is used instead.
+projscale = 1,.7
+projremove = 1
+;    Set to a nonzero value to have the projectile be removed after it 
+;    hits, or to 0 to disable this behavior. Defaults to 1.
+projremovetime = -1
+;    Specifies the number of ticks after which the projectile should be 
+;    removed from the screen. Defaults to -1 (never time out).
+velocity =7.1,0
+accel = 0,0
+;    Specifies the acceleration to apply to the projectile in the x and 
+;    y directions. Defaults to 0,0 if omitted.
+;velmul = x_mul, y_mul (float)
+;    Specifies x and y velocity multipliers. The projectile's velocity 
+;    is multiplied by these multipliers on every tick. The multipliers 
+;    default to 1 if omitted.
+projhits = 1
+projmisstime = 0
+;    If the projectile does multiple hits, specifies the least number 
+;    of ticks that must elapse between hits. Defaults to 0, but you 
+;    will most likely need a nonzero value.
+projpriority = 3
+;    Specifies the projectile priority. If the projectile collides with
+;    another projectile of equal priority, they will cancel. If it 
+;    collides with another of lower priority, it will cancel the lower-
+;    priority projectile, and the higher-priority one will have its
+;    priority decreased by 1.
+;    Defaults to 1. 
+projsprpriority =3
+;    Specifies the sprite priority of the projectile. Higher-priority 
+;    sprites are drawn on top of lower-priority sprites. Defaults to 3.
+offset = 110,-80
+;    Specifies the x and y offsets at which the projectile should be 
+;    created. Both parameters default to 0 if omitted. The exact 
+;    behavior of the offset parameters is dependent on the postype.
+postype = p1
+;p1
+;      - p2
+;      - front
+;      - back
+;      - left
+;      - right
+projshadow = 0,0,0 
+;    Specifies the R, G, and B components of the projectile's shadow.
+;    These components should be integers between 0 and 255, 
+;    inclusive. If shad_r evaluates to -1, then the stage's shadow
+;    color will be used. The higher a component value, the less of
+;    that color is displayed in the shadow. So a perfectly black shadow
+;    is 255,255,255. Defaults to 0,0,0 (no shadow).
+;supermovetime = 0
+;    Determines the number of ticks that the projectile should be 
+;    "unfrozen" during a SuperPause. Defaults to 0.
+;pausemovetime = move_time (int)
+;afterimage.time = 0
+
+[State 1200,End]
+type = ChangeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;===================================================================================================================
+[Statedef 1100]
+type = S
+movetype = A
+physics = S
+velset = 0, 0
+ctrl = 0
+anim = 1100
+poweradd = 100
+[State 210,2]
+type = playsnd
+trigger1 = time = 0
+value = 10,1
+[State 210,2]
+type = playsnd
+trigger1 = time = 0
+value = 0,3
+
+[State 1200, Projectile]
+type = Projectile
+trigger1 = animelem = 3
+ProjID = 1000
+projanim = 1030
+projhitanim = 1040
+;projremanim = 1202
+attr = S, NP
+damage   = 60,10
+animtype = high
+guardflag = MA
+hitflag = MA
+sparkno = -1
+guard.sparkno = -1
+pausetime = 12,12
+hitsound = 19001,2
+guardsound = 19003,0
+ground.type = High
+ground.slidetime = 30
+ground.hittime  = 20
+ground.velocity = -12
+air.animtype = Back
+air.velocity = -3,-5
+;
+guard.velocity = -12
+guard.ctrltime = 17
+;
+air.juggle = 3
+air.fall = 1
+fall.recover = 0
+;
+;projcancelanim = anim_no (int)
+;    Specifies the animation action number to play when the projectile 
+;    is cancelled by hitting another projectile. If omitted, 
+;    projremanim is used instead.
+projscale = 1,.7
+projremove = 1
+;    Set to a nonzero value to have the projectile be removed after it 
+;    hits, or to 0 to disable this behavior. Defaults to 1.
+projremovetime = -1
+;    Specifies the number of ticks after which the projectile should be 
+;    removed from the screen. Defaults to -1 (never time out).
+velocity = 3.7,0
+accel = 0,0
+;    Specifies the acceleration to apply to the projectile in the x and 
+;    y directions. Defaults to 0,0 if omitted.
+;velmul = x_mul, y_mul (float)
+;    Specifies x and y velocity multipliers. The projectile's velocity 
+;    is multiplied by these multipliers on every tick. The multipliers 
+;    default to 1 if omitted.
+projhits = 1
+projmisstime = 0
+;    If the projectile does multiple hits, specifies the least number 
+;    of ticks that must elapse between hits. Defaults to 0, but you 
+;    will most likely need a nonzero value.
+projpriority = 3
+;    Specifies the projectile priority. If the projectile collides with
+;    another projectile of equal priority, they will cancel. If it 
+;    collides with another of lower priority, it will cancel the lower-
+;    priority projectile, and the higher-priority one will have its
+;    priority decreased by 1.
+;    Defaults to 1. 
+projsprpriority =3
+;    Specifies the sprite priority of the projectile. Higher-priority 
+;    sprites are drawn on top of lower-priority sprites. Defaults to 3.
+offset = 110,-35
+;    Specifies the x and y offsets at which the projectile should be 
+;    created. Both parameters default to 0 if omitted. The exact 
+;    behavior of the offset parameters is dependent on the postype.
+postype = p1
+;p1
+;      - p2
+;      - front
+;      - back
+;      - left
+;      - right
+projshadow = 0,0,0 
+;    Specifies the R, G, and B components of the projectile's shadow.
+;    These components should be integers between 0 and 255, 
+;    inclusive. If shad_r evaluates to -1, then the stage's shadow
+;    color will be used. The higher a component value, the less of
+;    that color is displayed in the shadow. So a perfectly black shadow
+;    is 255,255,255. Defaults to 0,0,0 (no shadow).
+;supermovetime = 0
+;    Determines the number of ticks that the projectile should be 
+;    "unfrozen" during a SuperPause. Defaults to 0.
+;pausemovetime = move_time (int)
+;afterimage.time = 0
+
+[State 1200,End]
+type = ChangeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;===================================================================================================================
+[Statedef 1110]
+type = S
+movetype = A
+physics = S
+velset = 0, 0
+ctrl = 0
+anim = 1110
+poweradd = 100
+[State 210,2]
+type = playsnd
+trigger1 = time = 0
+value = 10,1
+[State 210,2]
+type = playsnd
+trigger1 = time = 0
+value = 0,3
+
+[State 1200, Projectile]
+type = Projectile
+trigger1 = animelem = 3
+ProjID = 1000
+projanim = 1030
+projhitanim = 1040
+;projremanim = 1202
+attr = S, NP
+damage   = 60,10
+animtype = high
+guardflag = MA
+hitflag = MA
+sparkno = -1
+guard.sparkno = -1
+pausetime = 12,12
+hitsound = 19001,2
+guardsound = 19003,0
+ground.type = High
+ground.slidetime = 30
+ground.hittime  = 20
+ground.velocity = -12
+air.animtype = Back
+air.velocity = -3,-5
+;
+guard.velocity = -12
+guard.ctrltime = 17
+;
+air.juggle = 3
+air.fall = 1
+fall.recover = 0
+;
+;projcancelanim = anim_no (int)
+;    Specifies the animation action number to play when the projectile 
+;    is cancelled by hitting another projectile. If omitted, 
+;    projremanim is used instead.
+projscale = 1,.7
+projremove = 1
+;    Set to a nonzero value to have the projectile be removed after it 
+;    hits, or to 0 to disable this behavior. Defaults to 1.
+projremovetime = -1
+;    Specifies the number of ticks after which the projectile should be 
+;    removed from the screen. Defaults to -1 (never time out).
+velocity = 5.6,0
+accel = 0,0
+;    Specifies the acceleration to apply to the projectile in the x and 
+;    y directions. Defaults to 0,0 if omitted.
+;velmul = x_mul, y_mul (float)
+;    Specifies x and y velocity multipliers. The projectile's velocity 
+;    is multiplied by these multipliers on every tick. The multipliers 
+;    default to 1 if omitted.
+projhits = 1
+projmisstime = 0
+;    If the projectile does multiple hits, specifies the least number 
+;    of ticks that must elapse between hits. Defaults to 0, but you 
+;    will most likely need a nonzero value.
+projpriority = 3
+;    Specifies the projectile priority. If the projectile collides with
+;    another projectile of equal priority, they will cancel. If it 
+;    collides with another of lower priority, it will cancel the lower-
+;    priority projectile, and the higher-priority one will have its
+;    priority decreased by 1.
+;    Defaults to 1. 
+projsprpriority =3
+;    Specifies the sprite priority of the projectile. Higher-priority 
+;    sprites are drawn on top of lower-priority sprites. Defaults to 3.
+offset = 110,-35
+;    Specifies the x and y offsets at which the projectile should be 
+;    created. Both parameters default to 0 if omitted. The exact 
+;    behavior of the offset parameters is dependent on the postype.
+postype = p1
+;p1
+;      - p2
+;      - front
+;      - back
+;      - left
+;      - right
+projshadow = 0,0,0 
+;    Specifies the R, G, and B components of the projectile's shadow.
+;    These components should be integers between 0 and 255, 
+;    inclusive. If shad_r evaluates to -1, then the stage's shadow
+;    color will be used. The higher a component value, the less of
+;    that color is displayed in the shadow. So a perfectly black shadow
+;    is 255,255,255. Defaults to 0,0,0 (no shadow).
+;supermovetime = 0
+;    Determines the number of ticks that the projectile should be 
+;    "unfrozen" during a SuperPause. Defaults to 0.
+;pausemovetime = move_time (int)
+;afterimage.time = 0
+
+[State 1200,End]
+type = ChangeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;===================================================================================================================
+[Statedef 1120]
+type = S
+movetype = A
+physics = S
+velset = 0, 0
+ctrl = 0
+anim = 1120
+poweradd = 100
+[State 210,2]
+type = playsnd
+trigger1 = time = 0
+value = 10,1
+[State 210,2]
+type = playsnd
+trigger1 = time = 0
+value = 0,3
+
+[State 1200, Projectile]
+type = Projectile
+trigger1 = animelem = 3
+ProjID = 1000
+projanim = 1030
+projhitanim = 1040
+;projremanim = 1202
+attr = S, NP
+damage   = 60,10
+animtype = high
+guardflag = MA
+hitflag = MA
+sparkno = -1
+guard.sparkno = -1
+pausetime = 12,12
+hitsound = 19001,2
+guardsound = 19003,0
+ground.type = High
+ground.slidetime = 30
+ground.hittime  = 15
+ground.velocity = -12
+air.animtype = Back
+air.velocity = -3,-5
+;
+guard.velocity = -12
+guard.ctrltime = 17
+;
+air.juggle = 3
+air.fall = 1
+fall.recover = 0
+;
+;projcancelanim = anim_no (int)
+;    Specifies the animation action number to play when the projectile 
+;    is cancelled by hitting another projectile. If omitted, 
+;    projremanim is used instead.
+projscale = 1,.7
+projremove = 1
+;    Set to a nonzero value to have the projectile be removed after it 
+;    hits, or to 0 to disable this behavior. Defaults to 1.
+projremovetime = -1
+;    Specifies the number of ticks after which the projectile should be 
+;    removed from the screen. Defaults to -1 (never time out).
+velocity =7.1,0
+accel = 0,0
+;    Specifies the acceleration to apply to the projectile in the x and 
+;    y directions. Defaults to 0,0 if omitted.
+;velmul = x_mul, y_mul (float)
+;    Specifies x and y velocity multipliers. The projectile's velocity 
+;    is multiplied by these multipliers on every tick. The multipliers 
+;    default to 1 if omitted.
+projhits = 1
+projmisstime = 0
+;    If the projectile does multiple hits, specifies the least number 
+;    of ticks that must elapse between hits. Defaults to 0, but you 
+;    will most likely need a nonzero value.
+projpriority = 3
+;    Specifies the projectile priority. If the projectile collides with
+;    another projectile of equal priority, they will cancel. If it 
+;    collides with another of lower priority, it will cancel the lower-
+;    priority projectile, and the higher-priority one will have its
+;    priority decreased by 1.
+;    Defaults to 1. 
+projsprpriority =3
+;    Specifies the sprite priority of the projectile. Higher-priority 
+;    sprites are drawn on top of lower-priority sprites. Defaults to 3.
+offset = 110,-35
+;    Specifies the x and y offsets at which the projectile should be 
+;    created. Both parameters default to 0 if omitted. The exact 
+;    behavior of the offset parameters is dependent on the postype.
+postype = p1
+;p1
+;      - p2
+;      - front
+;      - back
+;      - left
+;      - right
+projshadow = 0,0,0 
+;    Specifies the R, G, and B components of the projectile's shadow.
+;    These components should be integers between 0 and 255, 
+;    inclusive. If shad_r evaluates to -1, then the stage's shadow
+;    color will be used. The higher a component value, the less of
+;    that color is displayed in the shadow. So a perfectly black shadow
+;    is 255,255,255. Defaults to 0,0,0 (no shadow).
+;supermovetime = 0
+;    Determines the number of ticks that the projectile should be 
+;    "unfrozen" during a SuperPause. Defaults to 0.
+;pausemovetime = move_time (int)
+;afterimage.time = 0
+
+[State 1200,End]
+type = ChangeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;===================================================================================================================
+[Statedef 1200]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 1200
+poweradd = 200
+
+
+[State 210,2]
+type = playsnd
+trigger1 = time = 0
+value = 10,5
+
+[State 210,2]
+type = NotHitby
+trigger1 = time <= 6
+value = SCA
+
+[State 210,2]
+type = HitDef
+trigger1 = time = 0
+priority = 4, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = S,NA			;STAND / NORMAL ATTACK
+hitflag = MA			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = back			;2p ANIM
+ground.type = high
+;
+damage = 100,10
+getpower = 100
+GivePower = 30
+;
+pausetime = 14,14
+guard.pausetime = 14,14
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -3,-5
+air.velocity = -3,-5
+guard.velocity = -15
+airguard.velocity = -4,-5
+air.juggle = 16
+;
+ground.cornerpush.veloff = -15
+guard.cornerpush.veloff = -15
+;
+sparkxy = 10,-65
+;
+juggle = 10
+hitsound = 19001,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 3
+;
+fall = 1
+air.fall = 1
+fall.recover = 0
+
+[State 250,3]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1201
+ctrl = 0
+
+;-------------------------------------------------------------------------
+[Statedef 1201]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 1210
+
+[State 210,2]
+type = HitDef
+trigger1 = time = 0
+priority = 4, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = S,NA			;STAND / NORMAL ATTACK
+hitflag = MA			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = back			;2p ANIM
+ground.type = high
+;
+damage = 100,10
+getpower = 100
+GivePower = 30
+;
+pausetime = 14,14
+guard.pausetime = 14,14
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -3,-5
+air.velocity = -3,-5
+guard.velocity = -15
+airguard.velocity = -4,-5
+air.juggle = 16
+;
+ground.cornerpush.veloff = -15
+guard.cornerpush.veloff = -15
+;
+sparkxy = 10,-65
+;
+juggle = 10
+hitsound = 19001,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 3
+;
+fall = 1
+air.fall = 1
+fall.recover = 0
+
+[State 1200.pos]
+type = Posadd
+trigger1 = time = 0
+x = 20
+
+[State 1200.vel]
+type = velset
+trigger1 = time >= 0
+x = 2
+y = -6
+[State 1200.vel]
+type = velset
+trigger1 = time >= 5
+x = 1
+y = -4
+[State 1200.vel]
+type = velset
+trigger1 = time >= 10
+x = 0
+y = -2
+[State 1200.vel]
+type = velset
+trigger1 = time >= 14
+y = -0.5
+
+[State 250,3]
+type = ChangeState
+trigger1 = time = 16
+value = 1202
+ctrl = 0
+
+[Statedef 1202]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 1220
+
+[State 1200.vel]
+type = velset
+trigger1 = time >= 5
+y = 2
+[State 1200.vel]
+type = velset
+trigger1 = time >= 7
+y = 4
+[State 1200.vel]
+type = velset
+trigger1 = time >= 9
+y = 6
+[State 1200.vel]
+type = velset
+trigger1 = time >= 11
+y = 7
+[State 1200.vel]
+type = velset
+trigger1 = time >= 12
+y = 8
+[State 1200.vel]
+type = velset
+trigger1 = time >= 13
+y = 10
+
+[State 250,3]
+type = ChangeState
+trigger1 = Pos Y >= 0 && Vel Y > 0
+value = 1203
+ctrl = 0
+
+[Statedef 1203]
+type = S
+movetype = A
+physics = S
+velset = 0, 0
+ctrl = 0
+anim = 40
+
+[State 1200.vel]
+type = Posset
+trigger1 = time >= 0
+y = 0
+
+[State 250,3]
+type = ChangeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;===================================================================================================================
+[Statedef 1210]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 1200
+poweradd = 200
+
+[State 210,2]
+type = playsnd
+trigger1 = time = 0
+value = 10,5
+
+[State 210,2]
+type = NotHitby
+trigger1 = time <= 6
+value = SCA
+
+[State 210,2]
+type = HitDef
+trigger1 = time = 0
+priority = 4, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = S,NA			;STAND / NORMAL ATTACK
+hitflag = MA			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = back			;2p ANIM
+ground.type = high
+;
+damage = 100,10
+getpower = 100
+GivePower = 30
+;
+pausetime = 14,14
+guard.pausetime = 14,14
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -3,-5
+air.velocity = -3,-5
+guard.velocity = -15
+airguard.velocity = -4,-5
+air.juggle = 16
+;
+ground.cornerpush.veloff = -15
+guard.cornerpush.veloff = -15
+;
+sparkxy = 10,-65
+;
+juggle = 10
+hitsound = 19001,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 3
+;
+fall = 1
+air.fall = 1
+fall.recover = 0
+
+[State 250,3]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1211
+ctrl = 0
+
+;-------------------------------------------------------------------------
+[Statedef 1211]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 1210
+
+[State 210,2]
+type = HitDef
+trigger1 = time = 0
+priority = 4, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = S,NA			;STAND / NORMAL ATTACK
+hitflag = MA			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = back			;2p ANIM
+ground.type = high
+;
+damage = 100,10
+getpower = 100
+GivePower = 30
+;
+pausetime = 14,14
+guard.pausetime = 14,14
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -3,-5
+air.velocity = -3,-5
+guard.velocity = -15
+airguard.velocity = -4,-5
+air.juggle = 16
+;
+ground.cornerpush.veloff = -15
+guard.cornerpush.veloff = -15
+;
+sparkxy = 10,-65
+;
+juggle = 10
+hitsound = 19001,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 3
+;
+fall = 1
+air.fall = 1
+fall.recover = 0
+
+[State 1200.pos]
+type = Posadd
+trigger1 = time = 0
+x = 20
+
+[State 1200.vel]
+type = velset
+trigger1 = time >= 0
+x = 5
+y = -8
+[State 1200.vel]
+type = velset
+trigger1 = time >= 5
+x = 3
+y = -6
+[State 1200.vel]
+type = velset
+trigger1 = time >= 10
+x = 2
+y = -3
+[State 1200.vel]
+type = velset
+trigger1 = time >= 14
+x = 1
+y = -1
+
+[State 250,3]
+type = ChangeState
+trigger1 = time = 16
+value = 1202
+ctrl = 0
+
+[Statedef 1212]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 1220
+
+[State 1200.vel]
+type = velset
+trigger1 = time >= 5
+y = 2
+[State 1200.vel]
+type = velset
+trigger1 = time >= 7
+y = 4
+[State 1200.vel]
+type = velset
+trigger1 = time >= 9
+y = 6
+[State 1200.vel]
+type = velset
+trigger1 = time >= 11
+y = 7
+[State 1200.vel]
+type = velset
+trigger1 = time >= 12
+y = 8
+
+[State 250,3]
+type = ChangeState
+trigger1 = Pos Y >= 0 && Vel Y > 0
+value = 1203
+ctrl = 0
+
+[Statedef 1203]
+type = S
+movetype = A
+physics = S
+velset = 0, 0
+ctrl = 0
+anim = 40
+
+[State 1200.vel]
+type = Posset
+trigger1 = time >= 0
+y = 0
+
+[State 250,3]
+type = ChangeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+
+
+
+
+;===================================================================================================================
+[Statedef 1220]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 1200
+poweradd = 200
+[State 210,2]
+type = playsnd
+trigger1 = time = 0
+value = 10,5
+
+[State 210,2]
+type = NotHitby
+trigger1 = time <= 6
+value = SCA
+
+[State 210,2]
+type = HitDef
+trigger1 = time = 0
+priority = 4, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = S,NA			;STAND / NORMAL ATTACK
+hitflag = MA			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = back			;2p ANIM
+ground.type = high
+;
+damage = 100,10
+getpower = 100
+GivePower = 30
+;
+pausetime = 14,14
+guard.pausetime = 14,14
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -2,-6
+air.velocity = -3,-5
+guard.velocity = -15
+airguard.velocity = -4,-5
+air.juggle = 16
+;
+ground.cornerpush.veloff = -15
+guard.cornerpush.veloff = -15
+;
+sparkxy = 10,-65
+;
+juggle = 10
+hitsound = 19001,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 3
+;
+fall = 1
+air.fall = 1
+fall.recover = 0
+
+[State 250,3]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1221
+ctrl = 0
+
+;-------------------------------------------------------------------------
+[Statedef 1221]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 1211
+
+[State 210,2]
+type = HitDef
+trigger1 = time = 0 || time = 3|| time = 5 
+priority = 4, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = S,NA			;STAND / NORMAL ATTACK
+hitflag = MAF			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = back			;2p ANIM
+ground.type = high
+;
+damage = 20,5
+getpower = 30
+GivePower = 10
+;
+pausetime = 10,10
+guard.pausetime = 10,10
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -3,-5
+air.velocity = -3,-5
+guard.velocity = -15
+airguard.velocity = -4,-5
+air.juggle = 16
+;
+ground.cornerpush.veloff = 0
+guard.cornerpush.veloff =0
+;
+sparkxy = 10,-95
+;
+juggle = 0
+hitsound = 19001,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 3
+;
+fall = 1
+air.fall = 1
+fall.recover = 0
+
+
+[State 210,2]
+type = HitDef
+trigger1 = time = 7 ;|| time = 9 || time = 11
+priority = 4, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = S,NA			;STAND / NORMAL ATTACK
+hitflag = MAF			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = back			;2p ANIM
+ground.type = high
+;
+damage = 20,5
+getpower = 30
+GivePower = 10
+;
+pausetime = 10,10
+guard.pausetime = 10,10
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -3,-5
+air.velocity = -3,-5
+guard.velocity = -15
+airguard.velocity = -4,-5
+air.juggle = 16
+;
+ground.cornerpush.veloff = 0
+guard.cornerpush.veloff =0
+;
+sparkxy = 10,-75
+;
+juggle = 0
+hitsound = 19001,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 3
+;
+fall = 1
+air.fall = 1
+fall.recover = 0
+
+
+
+
+
+[State 1200.pos]
+type = Posadd
+trigger1 = time = 0
+x = 20
+
+[State 1200.vel]
+type = velset
+trigger1 = time >= 0
+x = 7
+y = -10
+[State 1200.vel]
+type = velset
+trigger1 = time >= 5
+x = 5
+y = -7
+[State 1200.vel]
+type = velset
+trigger1 = time >= 10
+x = 2
+y = -6
+[State 1200.vel]
+type = velset
+trigger1 = time >= 14
+x = 1
+y = -2
+
+[State 250,3]
+type = ChangeState
+trigger1 = time = 20
+value = 1202
+ctrl = 0
+
+[Statedef 1222]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 1220
+
+[State 1200.vel]
+type = velset
+trigger1 = time >= 5
+y = 2
+[State 1200.vel]
+type = velset
+trigger1 = time >= 7
+y = 4
+[State 1200.vel]
+type = velset
+trigger1 = time >= 9
+y = 6
+[State 1200.vel]
+type = velset
+trigger1 = time >= 11
+y = 7
+[State 1200.vel]
+type = velset
+trigger1 = time >= 12
+y = 8
+
+[State 250,3]
+type = ChangeState
+trigger1 = Pos Y >= 0 && Vel Y > 0
+value = 1203
+ctrl = 0
+
+
+
+
+
+;===================================================================================================================
+[Statedef 1300]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 1300
+poweradd = 200
+[State 210,2]
+type = playsnd
+trigger1 = time = 0
+value = 10,2
+
+[State 210,2]
+type = NotHitby
+trigger1 = time >= 0
+value = SCA
+
+[State 210,2]
+type = velset
+trigger1 = time >= 0
+x = .5
+
+[State 210,2]
+type = HitDef
+trigger1 = time >= 100
+priority = 5, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = S,NA			;STAND / NORMAL ATTACK
+hitflag = MA			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = back			;2p ANIM
+ground.type = high
+;
+damage = 80,10
+getpower = 80
+GivePower = 30
+;
+pausetime = 10,14
+guard.pausetime = 10,14
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -2,-6
+air.velocity = -3,-5
+guard.velocity = -15
+airguard.velocity = -4,-5
+air.juggle = 16
+;
+ground.cornerpush.veloff = -15
+guard.cornerpush.veloff = -15
+;
+sparkxy = 10,-65
+;
+juggle = 10
+hitsound = 19001,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 3
+;
+fall = 1
+air.fall = 1
+fall.recover = 0
+
+[State 250,3]
+type = ChangeState
+trigger1 = animtime = 0
+value = 1301
+ctrl = 0
+
+[Statedef 1301]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 1301
+
+[State 210,2]
+type = velset
+trigger1 = time >= 0
+x = 12
+y = -6
+[State 210,2]
+type = velset
+trigger1 = time >= 4
+x = 9
+y = -3
+[State 210,2]
+type = velset
+trigger1 = time >= 7
+x = 5
+y = 0
+
+[State 210,2]
+type = HitDef
+trigger1 = animelem = 1 || animelem = 2
+priority = 5, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = S,NA			;STAND / NORMAL ATTACK
+hitflag = MA			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = back			;2p ANIM
+ground.type = high
+;
+damage = 80,10
+getpower = 80
+GivePower = 30
+;
+pausetime = 10,14
+guard.pausetime = 10,14
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -3,-3
+air.velocity = -3,-5
+guard.velocity = -15
+airguard.velocity = -4,-5
+air.juggle = 16
+;
+ground.cornerpush.veloff = -25
+guard.cornerpush.veloff = -25
+;
+sparkxy = 10,-65
+;
+juggle = 10
+hitsound = 19001,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 3
+;
+fall = 1
+air.fall = 1
+fall.recover = 0
+
+[State 250,3]
+type = ChangeState
+trigger1 = animtime = 0
+value = 1302
+ctrl = 0
+
+[Statedef 1302]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 1303
+
+[State 210,2]
+type = velset
+trigger1 = time >= 0
+x = 0.5
+y = 1
+[State 210,2]
+type = velset
+trigger1 = time >= 2
+y = 3
+[State 210,2]
+type = velset
+trigger1 = time >= 3
+y = 5
+[State 210,2]
+type = velset
+trigger1 = time >= 4
+y = 7
+
+[State 250,3]
+type = ChangeState
+trigger1 = Pos Y >= 0 && Vel Y > 0
+value = 1304
+ctrl = 0
+
+[Statedef 1304]
+type = S
+movetype = A
+physics = S
+velset = 0, 0
+ctrl = 0
+anim = 40
+
+[State 250,3]
+type = Posset
+trigger1 = time = 0
+y = 0
+
+[State 250,3]
+type = ChangeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;===================================================================================================================
+[Statedef 1310]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 1300
+juggle = 10
+poweradd = 200
+[State 210,2]
+type = playsnd
+trigger1 = time = 0
+value = 10,2
+
+[State 210,2]
+type = NotHitby
+trigger1 = time >= 0
+value = SCA
+
+[State 210,2]
+type = velset
+trigger1 = time >= 0
+x = 1
+
+[State 210,2]
+type = HitDef
+trigger1 = time >= 100
+priority = 5, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = S,NA			;STAND / NORMAL ATTACK
+hitflag = MA			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = back			;2p ANIM
+ground.type = high
+;
+damage = 80,10
+getpower = 80
+GivePower = 30
+;
+pausetime = 10,14
+guard.pausetime = 10,14
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -3,-3
+air.velocity = -3,-5
+guard.velocity = -15
+airguard.velocity = -4,-5
+air.juggle = 16
+;
+ground.cornerpush.veloff = -15
+guard.cornerpush.veloff = -15
+;
+sparkxy = 10,-65
+;
+hitsound = 19001,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 3
+;
+fall = 0
+air.fall = 1
+fall.recover = 0
+
+[State 250,3]
+type = ChangeState
+trigger1 = animtime = 0
+value = 2311
+ctrl = 0
+
+[Statedef 2311]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 1302
+juggle = 15
+
+[State 210,2]
+type = velset
+trigger1 = time >= 0
+x = 17
+y = -9
+[State 210,2]
+type = velset
+trigger1 = time >= 4
+x = 7
+y = -5
+[State 210,2]
+type = velset
+trigger1 = time >= 7
+x = 4
+y = 0
+
+[State 210,2]
+type = HitDef
+trigger1 = animelem = 3 || animelem = 2
+priority = 5, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = S,NA			;STAND / NORMAL ATTACK
+hitflag = MAF			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = back			;2p ANIM
+ground.type = high
+;
+damage = 55,8
+getpower = 80
+GivePower = 30
+;
+pausetime = 10,14
+guard.pausetime = 10,14
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -3,-3
+air.velocity = -3,-5
+guard.velocity = -15
+airguard.velocity = -4,-5
+air.juggle = 16
+;
+ground.cornerpush.veloff = -25
+guard.cornerpush.veloff = -25
+;
+sparkxy = 10,-65
+;
+juggle = 10
+hitsound = 19001,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 3
+;
+fall = 1
+air.fall = 1
+fall.recover = 0
+
+[State 250,3]
+type = ChangeState
+trigger1 = animtime = 0
+value = 1302
+ctrl = 0
+
+;===================================================================================================================
+[Statedef 1320]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 1300
+juggle = 10
+poweradd = 200
+[State 210,2]
+type = playsnd
+trigger1 = time = 0
+value = 10,2
+
+[State 210,2]
+type = NotHitby
+trigger1 = time >= 0
+value = SCA
+
+[State 210,2]
+type = velset
+trigger1 = time >= 0
+x = 1
+
+[State 210,2]
+type = HitDef
+trigger1 = time  = 0
+priority = 5, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = S,NA			;STAND / NORMAL ATTACK
+hitflag = MA			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = back			;2p ANIM
+ground.type = high
+;
+damage = 45,8
+getpower = 80
+GivePower = 30
+;
+pausetime = 12,12
+guard.pausetime = 12,12
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -3,0
+air.velocity = -3,-5
+guard.velocity = -12
+airguard.velocity = -4,-5
+;
+ground.cornerpush.veloff = -15
+guard.cornerpush.veloff = -15
+;
+sparkxy = 10,-65
+;
+hitsound = 19001,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 3
+;
+fall = 0
+air.fall = 1
+fall.recover = 0
+
+[State 250,3]
+type = ChangeState
+trigger1 = animtime = 0
+value = 1321
+ctrl = 0
+
+[Statedef 1321]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 1302
+juggle = 5
+
+[State 210,2]
+type = velset
+trigger1 = time >= 0
+x = 19
+y = -9
+[State 210,2]
+type = velset
+trigger1 = time >= 4
+x = 8
+y = -5
+[State 210,2]
+type = velset
+trigger1 = time >= 7
+x = 5
+y = 0
+
+[State 210,2]
+type = HitDef
+trigger1 = animelem = 3 || animelem = 2
+priority = 5, Hit			;2 for ??, 3 for M/H att, 4 for L att, 5 for super, 6 fot hyper
+;
+attr = S,NA			;STAND / NORMAL ATTACK
+hitflag = MA			;MIDDLE ATTACK
+guardflag = M			;GUARD is MIDDLE /L is LOW
+;
+animtype = hard	 		;2p ANIM, light", "medium", "hard", "back", "up",    or "diagup"
+air.animtype = back			;2p ANIM
+ground.type = high
+;
+damage = 55,10
+getpower = 80
+GivePower = 30
+;
+pausetime = 12,12
+guard.pausetime = 12,12
+;
+ground.slidetime = 20
+;
+ground.hittime = 20
+air.hittime = 30
+;
+guard.hittime = 17
+guard.ctrltime =17
+;
+ground.velocity = -3,-3
+air.velocity = -3,-5
+guard.velocity = -15
+airguard.velocity = -4,-5
+air.juggle = 16
+;
+ground.cornerpush.veloff = -25
+guard.cornerpush.veloff = -25
+;
+sparkxy = 10,-65
+;
+hitsound = 19001,2
+guardsound = 19003,0
+sparkno = 2
+guard.sparkno = 3
+;
+fall = 1
+air.fall = 1
+fall.recover = 0
+
+[State 250,3]
+type = ChangeState
+trigger1 = animtime = 0
+value = 1322
+ctrl = 0
+
+[Statedef 1322]
+type = A
+movetype = A
+physics = N
+velset = 0, 0
+ctrl = 0
+anim = 1303
+
+[State 210,2]
+type = velset
+trigger1 = time >= 0
+x = 0.5
+y = 1
+[State 210,2]
+type = velset
+trigger1 = time >= 2
+y = 3
+[State 210,2]
+type = velset
+trigger1 = time >= 3
+y = 5
+[State 210,2]
+type = velset
+trigger1 = time >= 4
+y = 7
+
+[State 250,3]
+type = ChangeState
+trigger1 = Pos Y >= 0 && Vel Y > 0
+value = 1324
+ctrl = 0
+
+[Statedef 1324]
+type = S
+movetype = A
+physics = S
+velset = 0, 0
+ctrl = 0
+anim = 40
+
+[State 250,3]
+type = Posset
+trigger1 = time = 0
+y = 0
+
+[State 250,3]
+type = ChangeState
+trigger1 = time = 6
+value = 0
+ctrl = 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;=======================================================================================================
+;=======================================================================================================
+;=======================================================================================================
+;=======================================================================================================
+;=======================================================================================================
+;P2 control state
+[Statedef 13055]
+type = A
+movetype = H
+physics = N
+anim = 5070
+ctrl = 0
+
+[State 911, 1]
+type = LifeAdd
+Trigger1 = time = 0
+value = -100
+
+[State 1215,SprPriority]
+type = SprPriority
+trigger1 = time >= 0
+value = -1
+
+[State 911, 1]
+type = velset
+Trigger1 = time >= 0
+x = 3
+y = -7
+[State 911, 1]
+type = velset
+Trigger1 = time >= 3
+y = -6
+[State 911, 1]
+type = velset
+Trigger1 = time >= 6
+y = -5
+[State 911, 1]
+type = velset
+Trigger1 = time >= 9
+y = -4
+[State 911, 1]
+type = velset
+Trigger1 = time >= 12
+y = -3
+[State 911, 1]
+type = velset
+Trigger1 = time >= 15
+y = -2
+[State 911, 1]
+type = velset
+Trigger1 = time >= 18
+y = 0
+[State 911, 1]
+type = velset
+Trigger1 = time >= 21
+y = 2
+[State 911, 1]
+type = velset
+Trigger1 = time >= 24
+y = 4
+[State 911, 1]
+type = velset
+Trigger1 = time >= 27
+y = 6
+[State 911, 1]
+type = velset
+Trigger1 = time >= 30
+y = 8
+
+[State 1335,SelfState]
+type = SelfState
+trigger1 = Vel Y > 0 && Pos Y >= 0
+value = 5100
+

@@ -1,0 +1,173 @@
+[Statedef 2000]
+type = S
+movetype = A
+physics = S
+velset = 0,0
+ctrl = 0
+juggle = 10
+anim = 2000
+poweradd = -1000
+
+[State 1000, playsnd]
+type = PlaySnd
+trigger1 = animelem = 1
+value = 15,0
+
+[State 1000, playsnd]
+type = PlaySnd
+trigger1 = animelem = 1
+value =  1,3
+
+;SUPER PAUSE SYSTEM::::
+[State 2000, level1 SuperPause]
+type = SuperPause
+trigger1 = time = 0
+time = 30
+;anim = S1218
+;pos = -10,-220
+;sound = 
+movetime = 30
+darken = 1
+unhittable = 1
+supermove = 1
+
+[State 2000, explod 1]	;BG
+type = Explod
+trigger1 = time = 1
+trigger1 = numexplod(1218) = 0
+anim = 1218
+ID = 1218
+sprpriority = -1
+postype = left
+pos = 0,0
+bindtime = -1
+supermove = 1
+ownpal = 1
+removetime = 30
+
+[State 2000, explod 2]	;BG2  only black colour
+type = Explod
+trigger1 = time = 1
+trigger1 = numexplod(1221) = 0
+anim = 1221
+ID = 1221
+sprpriority = -2
+postype = left
+pos = 0,0
+bindtime = -1
+supermove = 1
+ownpal = 1
+removetime = 30
+
+[State 2000, explod 3]	;the exp for chars.
+type = Explod
+trigger1 = time = 1
+trigger1 = numexplod(1219) = 0
+anim = 1219
+ID = 1219
+sprpriority = 4
+postype = p1
+pos = 0,-50
+bindtime = -1
+supermove = 1
+ownpal = 1
+removetime = 30
+
+[State 2000, after image]
+type = AfterImage
+trigger1 = time = 0
+time = 70
+TimeGap  = 2
+FrameGap = 4
+length = 10
+PalBright = 1,1,1
+;PalContrast =
+PalAdd = 0,0,0
+PalMul = 1,1,1
+trans = add1
+;
+;
+;
+[State 2000, valset]
+type = Velset
+trigger1 = time > 30
+x = 3
+y = 0
+
+[State 240, 2]
+type = HitDef
+trigger1 = animelem = 4 || animelem = 8 || animelem = 13 || animelem = 17
+attr = S, NA
+damage    = 50,10
+animtype  = Medium
+guardflag = MA                   ;Flags on how move is to be guarded against
+hitflag = MAF                    ;Flags of conditions that move can hit
+priority = 5, Hit                ;Attack priority: 0 (least) to 7 (most), 4 default
+damage    = 50
+guardflag = MA
+pausetime = 12,15
+sparkno = 1
+guard.sparkno = 40
+sparkxy = -10,-60
+hitsound   = 2,3
+guardsound = S3,1
+ground.type = Low
+ground.slidetime = 15
+ground.hittime  = 35
+ground.velocity = -8
+guard.velocity = -8
+guard.ctrltime = 35
+air.velocity = -2.2,-3.2
+air.fall = 1
+fall = 0
+fall.recover = 0
+juggle = 16
+
+[State 240, 2]
+type = HitDef
+trigger1 = animelem =24 
+attr = S, NA
+damage    = 50,10
+animtype  = Medium
+guardflag = MA                   ;Flags on how move is to be guarded against
+hitflag = MAF                    ;Flags of conditions that move can hit
+priority = 5, Hit                ;Attack priority: 0 (least) to 7 (most), 4 default
+guardflag = MA
+pausetime = 12,15
+sparkno = 1
+guard.sparkno = 40
+sparkxy = -10,-60
+hitsound   = 2,3
+guardsound = S3,1
+ground.type = Low
+ground.slidetime = 15
+ground.hittime  = 35
+ground.velocity = -3, -5
+air.velocity = -3, -5
+guard.velocity = -8
+guard.ctrltime = 35
+air.fall = 1
+fall = 1
+fall.recover = 0
+juggle = 16
+
+[State 210,3]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

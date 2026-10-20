@@ -1,0 +1,7 @@
+[SceneDef]
+spr = ../system.sff
+startscene = 0
+
+[Scene 0]
+end.time = 0
+clearcolor = 0,0,0

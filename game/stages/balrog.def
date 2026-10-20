@@ -1,0 +1,204 @@
+[Info]
+name = "Balrog HD"
+displayname = "Balrog's Stage"
+versiondate = 02/02/16
+mugenversion = 1.1
+author = "Parse"
+
+[Camera]
+startx 		= 0
+starty 		= 0
+boundleft 	= -849
+boundright 	= 849
+boundhigh = 0
+boundlow  	= 0
+tension 	          = 200
+verticalfollow = 0
+floortension 	= 290
+overdrawhigh 	= 120
+overdrawlow 	= 120
+cuthigh 	          = 0
+cutlow              = 0
+
+[PlayerInfo]
+p1startx 	= -430
+p1starty 	= 0
+p1facing 	= 1
+p2startx 	= 430
+p2starty 	= 0
+p2facing 	= -1
+p3startx 	= -400
+p3starty 	= 0
+p3facing 	= 1
+p4startx 	= 400
+p4starty 	= 0
+p4facing 	= -1
+leftbound 	= -4000
+rightbound 	= 4000
+
+[Bound]
+screenleft 	= 150
+screenright 	= 150
+
+[StageInfo]
+zoffset 	= 966
+autoturn 	= 1
+resetBG 	= 0
+localcoord 	= 1920,1080
+xscale 		= .952
+yscale 		= 1
+
+[Scaling]
+topz     	= 0
+botz     	= 50
+topscale 	= 1
+botscale 	= 1.2
+
+[Shadow]
+intensity = 190
+color = 0,0,0
+yscale = -0.14
+fade.range = -470,-150
+xshear = -.2
+
+[Music]
+bgmusic = sound/balrog-theme.mp3
+
+
+bgmvolume = 100
+
+[BGdef]
+spr = balrog.sff
+debugbg = 0
+
+[BG Far_BG]
+type = normal
+spriteno = 0,0
+start = 52,1101
+mask = 0
+delta = .582, 1
+scalestart = 1.8576,1.2209
+
+[BG Anim03_element]
+type = anim
+actionno = 2
+start = -107,922
+mask = 1
+delta = .584, 1
+scalestart = 1.1377,1.1131
+
+[BG Ground]
+type = parallax
+spriteno = 7,0
+start = 310,1310
+mask = 1
+delta = .81, 1
+xscale = 1, 1.97
+scalestart = 1.365,.70
+
+[BG Mid_BG_dude]
+type = normal
+spriteno = 5,0
+start = -669,848
+mask = 1
+delta = .584, 1
+scalestart = 1.0714,1.0086
+
+[BG Anim02_element]
+type = anim
+actionno = 3
+start = -80,863
+mask = 1
+delta = .584, 1
+scalestart = 1.1779,1.0640
+
+[BG Mid_BG_two_dudes]
+type = normal
+spriteno = 6,0
+start = 600,848
+mask = 1
+delta = .584, 1
+scalestart = 1.0818,1.0079
+
+;----------------------------------------------------------
+[BG Balrog_GirlL]
+type = anim
+actionno = 4
+start = 1164,815
+mask = 1
+delta = .584, 1
+scalestart = .9121,.9922
+id = 1
+
+
+[BGCtrlDef Balrog_GirlL]
+looptime = 1000
+ctrlID = 1
+
+[BGCtrl Balrog_GirlL]
+type = posset
+time = 0
+x = 0
+y = 0
+
+[BGCtrl Balrog_GirlL]
+type = VelSet
+time = 0
+x = -4.5
+;----------------------------------------------------------
+
+[BG Balrog_GirlR]
+type = anim
+actionno = 5
+start = -3428,815
+mask = 1
+delta = .584, 1
+scalestart = .9121,.9922
+id = 2
+
+
+[BGCtrlDef Balrog_GirlR]
+looptime = 1000
+ctrlID = 2
+
+[BGCtrl Balrog_GirlR]
+type = posset
+time = 0
+x = 0
+y = 0
+
+[BGCtrl Balrog_GirlR]
+type = VelSet
+time = 0
+x = 4.5
+;----------------------------------------------------------
+
+[BG Anim01_element]
+type = anim
+actionno = 1
+start = 0,902
+mask = 1
+delta = .82, 1
+scalestart = 1.1653,1.2667
+
+;-------------------------------------------------------------------
+[Begin Action 1] ; stable architecture and cars
+2,0, 0,0, -1
+
+[Begin Action 2] ; stable architecture and cars
+1,0, 0,0, -1
+
+[Begin Action 3] ; consistent spectator proportions
+3,0, 0,0, -1
+
+[Begin Action 4];Balrog_GirlL
+4,0, 0,0, 16
+4,1, 0,0, 16
+4,2, 0,0, 16
+4,1, 0,0, 16
+
+[Begin Action 5];Balrog_GirlR
+4,0, 0,0, 16,H
+4,1, 0,0, 16,H
+4,2, 0,0, 16,H
+4,1, 0,0, 16,H

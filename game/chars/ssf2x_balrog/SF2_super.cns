@@ -1,0 +1,264 @@
+;bison super
+[Statedef 2000]
+type = S
+movetype = A
+physics = S
+velset = 0,0
+ctrl = 0
+juggle = 0
+anim = 2000
+poweradd = -3000
+
+[State 1000, playsnd]
+type = PlaySnd
+trigger1 = animelem = 1
+value = 15,0
+
+[State 1000, playsnd]
+type = PlaySnd
+trigger1 = animelem = 1
+value =  1,3
+
+;SUPER PAUSE SYSTEM::::
+[State 2000, level1 SuperPause]
+type = SuperPause
+trigger1 = time = 0
+time = 30
+;anim = S1218
+;pos = -10,-220
+;sound = 
+anim = 100
+pos = 10,-60
+sound = S6,1
+movetime = 30
+darken = 1
+unhittable = 1
+supermove = 1
+
+;[State 2000, explod 1]	;BG
+;type = Explod
+;trigger1 = time = 1
+;trigger1 = numexplod(1218) = 0
+;anim = 1218
+;ID = 1218
+;sprpriority = -1
+;postype = left
+;pos = 0,0
+;bindtime = -1
+;supermove = 1
+;ownpal = 1
+;removetime = 30
+
+[State 2000, explod 3]	;the exp for chars.
+;type = Explod
+type = null
+trigger1 = time = 1
+trigger1 = numexplod(13585) = 0
+anim = 100
+ID = 13585
+sprpriority = 4
+postype = p1
+pos = 10,-60
+bindtime = -1
+supermove = 1
+ownpal = 1
+removetime = 30
+
+[State 3100, Shadows]
+type = Afterimage
+trigger1 = Time = 0
+time = 90
+length = 20
+PalBright   =   0,  0,  0
+PalContrast = 48,48,128
+PalAdd=   0,  0,  0
+PalMul=  1,1,1
+FrameGap = 4
+TimeGap = 1
+Trans = Add1
+;
+;
+;
+[State 2000, valset]
+type = Velset
+trigger1 = time > 30
+x = 5
+y = 0
+
+[State 2000, valset]
+type = NotHitby
+trigger1 = time <= 40
+value = SA
+
+[State 240, 2]
+type = HitDef
+trigger1 = animelem = 4 || animelem = 8 || animelem = 13 || animelem = 17
+attr = S, NA
+damage    = 40,8
+animtype  = Medium
+guardflag = MA               	    ;Flags on how move is to be guarded against
+hitflag = MAF                	    ;Flags of conditions that move can hit
+priority = 5, Hit               	 ;Attack priority: 0 (least) to 7 (most), 4 default
+pausetime = 8,12
+sparkno = 1
+guard.sparkno = 40
+sparkxy = -10,-60
+hitsound = 19001,2
+guardsound = 19003,0
+ground.type = Low
+ground.slidetime = 17
+ground.hittime  = 30
+ground.velocity = -4,0
+guard.velocity = -8
+guard.ctrltime = 17
+air.velocity = -6,-2
+air.fall = 1
+fall = 0
+fall.recover = 0
+
+[State 240, 2]
+type = HitDef
+trigger1 = animelem =24 
+attr = S, NA
+damage    = 60,10
+animtype  = Medium
+guardflag = MA                   ;Flags on how move is to be guarded against
+hitflag = MAF                    ;Flags of conditions that move can hit
+priority = 5, Hit                ;Attack priority: 0 (least) to 7 (most), 4 default
+guardflag = MA
+pausetime = 12,15
+sparkno = 1
+guard.sparkno = 40
+sparkxy = -10,-60
+hitsound = 19001,2
+guardsound = 19003,0
+ground.type = Low
+ground.slidetime = 15
+ground.hittime  = 17
+ground.velocity = -5, -6
+air.velocity = -5, -6
+guard.velocity = -12
+guard.ctrltime = 17
+air.fall = 1
+fall = 1
+fall.recover = 0
+
+[State 210,3]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+;====================================================================
+[Statedef 2100]
+type = S
+movetype = A
+physics = S
+velset = 0,0
+ctrl = 0
+juggle = 0
+anim = 2100
+poweradd = -3000
+
+[State 2000, valset]
+type = NotHitby
+trigger1 = time <= 40
+value = SCA
+
+[State 1000, playsnd]
+type = PlaySnd
+trigger1 = animelem = 1
+value = 15,0
+
+[State 1000, playsnd]
+type = PlaySnd
+trigger1 = animelem = 1
+value =  1,3
+
+;SUPER PAUSE SYSTEM::::
+[State 3020,SuperPause]
+type = SuperPause
+trigger1 = Time = 0
+time = 30
+anim = 100
+sound = S6,1
+pos = 10,-75
+movetime = 30
+darken = 1
+unhittable = 1
+
+[State 3100, Shadows]
+type = Afterimage
+trigger1 = Time = 0
+time = 50
+length = 20
+PalBright   =   0,  0,  0
+PalContrast = 48,48,128
+PalAdd=   0,  0,  0
+PalMul=  1,1,1
+FrameGap = 4
+TimeGap = 1
+Trans = Add1
+;
+;
+;
+[State 2000, valset]
+type = Velset
+trigger1 = time > 34
+x = 6
+y = 0
+[State 2000, valset]
+type = Velset
+trigger1 = time > 48
+x = 0.5
+y = 0
+
+[State 240, 2]
+type = HitDef
+trigger1 = animelem = 14
+attr = S, SA
+damage    = 220,25
+animtype  = Medium
+guardflag = MA                   ;Flags on how move is to be guarded against
+hitflag = MAF                    ;Flags of conditions that move can hit
+priority = 5, Hit                ;Attack priority: 0 (least) to 7 (most), 4 default
+guardflag = MA
+pausetime = 14,24
+sparkno = 1
+guard.sparkno = 40
+sparkxy = -10,-60
+hitsound = 19001,2
+guardsound = 19003,0
+ground.type = Low
+ground.slidetime = 17
+ground.hittime  = 17
+ground.velocity = -12,10
+guard.velocity = -12
+guard.ctrltime = 17
+air.velocity = -2,-7
+air.fall = 1
+fall = 1
+fall.recover = 0
+
+[State 210,3]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,8 @@
+[Statedef 190]
+type = S
+physics = N
+ctrl = 0
+[State 190, native intro]
+type = ChangeState
+trigger1 = 1
+value = 191

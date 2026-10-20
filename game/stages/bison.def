@@ -1,0 +1,194 @@
+[Info]
+name = "Bison HD"
+displayname = "M. Bison's Stage"
+author          = "Parse"
+mugenversion 	= 1.1
+versiondate = 02,14,2012
+
+[Camera]
+startx 		= 0
+starty 		= 0
+boundleft 	= -483
+boundright 	= 483
+boundhigh = 0
+boundlow 	= 0
+tension 	= 200
+verticalfollow = 0
+floortension 	= 290
+overdrawhigh 	= 120
+overdrawlow 	= 120
+cuthigh 	= 0
+cutlow 		= 0
+
+[PlayerInfo]
+p1startx 	= -280
+p1starty 	= 0
+p1facing 	= 1
+p2startx 	= 280
+p2starty 	= 0
+p2facing 	= -1
+p3startx 	= -400
+p3starty 	= 0
+p3facing 	= 1
+p4startx 	= 400
+p4starty 	= 0
+p4facing 	= -1
+leftbound 	= -4000
+rightbound 	= 4000
+
+[Bound]
+screenleft 	= 60
+screenright 	= 60
+
+[StageInfo]
+zoffset 	= 650.0
+autoturn 	= 1
+resetBG 	= 0
+localcoord 	= 1280, 720
+xscale 		= 1
+yscale 		= 1
+
+[Scaling]
+topz     	= 0
+botz     	= 50
+topscale 	= 1
+botscale 	= 1.2
+
+[Shadow]
+intensity = 200
+color = 0,0,0
+yscale = -0.130
+fade.range = -300,-150
+
+[Music]
+bgmusic = sound/bison-theme.mp3
+bgm.loop = 1
+;bgmloopstart= 1462303;1471840
+;bgmloopend= -1
+bgmvolume= 100
+
+[BGdef]
+spr = bison.sff
+debugbg 	= 0
+
+[BG Sky1]
+type = normal
+spriteno = 8,0
+layerno = 0
+start = 0,453
+mask = 0
+delta = .388482, .9
+scalestart= .82,.8
+
+
+[BG TempleR]
+type = normal 
+spriteno = 0, 0
+start = 0,453
+delta = .478482, 1
+mask = 1
+
+[BG TempleG]
+type = normal 
+spriteno = 0, 1
+start = 0,453
+delta = .478482, 1
+mask = 1
+trans		= add
+
+[BG TempleB]
+type = normal 
+spriteno = 0, 2
+start = 0,453
+delta = .478482, 1
+mask = 1
+trans		= add
+
+[BG Floor1]
+type = parallax
+spriteno = 2,0
+layerno = 0
+start = 0,453
+mask = 0
+delta = .803571, 1
+xscale = 1, 1.405871
+tile = 1,0
+scalestart = 1,0.237569060773
+
+[BG left_bgstatue]
+type  		= normal
+spriteno 	= 4, 0
+start = 72,453
+delta = .651785, 1
+mask = 1
+
+[BG right_bgstatueR]
+type  		= normal
+spriteno 	= 5, 0
+start = -72,453
+delta = .651785, 1
+mask = 1
+
+[BG right_bgstatueG]
+type  		= normal
+spriteno 	= 5, 1
+start = -72,453
+delta = .651785, 1
+mask = 1
+trans		= add
+
+[BG right_bgstatueB]
+type  		= normal
+spriteno 	= 5, 2
+start = -72,453
+delta = .651785, 1
+mask = 1
+trans		= add
+
+[BG Ceiling]
+type = normal 
+spriteno = 1, 0
+start = 0,453
+delta = .8, 1
+mask = 1
+
+[BG Woman_left]
+type  = anim
+actionno = 1
+start = -2,453
+delta = .801339, 1
+mask = 1
+
+[BG people_right]
+type  = anim
+actionno = 2
+start = 0,453
+delta = .801339, 1
+mask = 1
+
+[BG Statue_shadow_right]
+type = normal 
+spriteno = 7, 0
+start = 600,630
+scalestart = .62,.62
+delta = 1, 1
+mask = 1
+
+[BG Statue_shadow_left]
+type = normal 
+spriteno = 7, 0
+start = -804,630
+delta = 1, 1
+scalestart = .62,.62
+mask = 1
+;--------------------------------------------------------
+[Begin Action 1] ; Stable mother and toddler idle/blink
+9,1,0,0,96
+9,2,0,0,8
+9,1,0,0,42
+
+[Begin Action 2] ; Spectators: feet/cane remain registered
+10,1,0,0,22
+10,2,0,0,14
+10,1,0,0,26
+

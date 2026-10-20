@@ -75,13 +75,20 @@ Este é um projeto de fã, sem vínculo oficial com a Capcom. As licenças da en
 
 **Super Street Fighter Turbo Remake** is a free, non-commercial fan project inspired by Street Fighter II, built for Windows using IKEMEN GO. It features a custom interface and a configured roster of 16 characters with their stages. AI tools support the creative and experimental process. The project is in development, and feedback, bug reports, playtesting and ideas from the community are welcome. Download the experimental Windows build from **Releases** and join the conversation through **Issues**.
 
-
 ## Código fonte e arquivos editáveis
 
-**[Baixar os fontes da v0.1.0](https://github.com/edhard-remakes/Super-Street-Fighter-Turbo-Remake-/releases/download/v0.1.0/SF2-Remake-v0.1.0-codigo-fonte.zip)** · [Checksum SHA-256](https://github.com/edhard-remakes/Super-Street-Fighter-Turbo-Remake-/releases/download/v0.1.0/SF2-Remake-v0.1.0-codigo-fonte.sha256)
+Os arquivos do projeto estão versionados diretamente na branch **main**:
 
-O pacote reúne 365 arquivos editáveis do jogo: scripts Lua, lógica e comandos dos personagens (CNS/ST/CMD), animações AIR, definições DEF, scripts ZSS, shaders e paletas. Também inclui o código C# do launcher, o empacotador portátil em Python e um README com instruções de edição e geração do executável.
+- [game/](game/): 365 arquivos originais editáveis do jogo, mais a configuração sem endereços salvos; lógica, comandos, animações, cenários, menus, shaders e paletas.
+- [launcher/](launcher/): código C# do inicializador.
+- [tools/](tools/): compilação do launcher e empacotamento portátil em Python.
+- [docs/BUILDING.md](docs/BUILDING.md): preparação da cópia editável, testes locais, compilação e créditos.
+- [SOURCE-MANIFEST.json](SOURCE-MANIFEST.json): hashes dos fontes correspondentes à versão pública v0.1.0.
 
-Os recursos grandes, como sprites, sons, vídeos, fontes e a engine nativa, são obtidos do EXE publicado neste mesmo release. O README do ZIP explica como preparar uma cópia de trabalho. Saves, replays e arquivos de teste não são incluídos. O código Go da engine é mantido separadamente no [IKEMEN GO](https://github.com/ikemen-engine/Ikemen-GO).
+```powershell
+git clone https://github.com/edhard-remakes/Super-Street-Fighter-Turbo-Remake-.git
+```
 
-Para obter os fontes do projeto, use o ZIP **SF2-Remake-v0.1.0-codigo-fonte.zip** anexado ao release; os arquivos automáticos “Source code” do GitHub contêm apenas o conteúdo versionado neste repositório.
+Os recursos grandes (SFF, sons, músicas, vídeos, fontes e engine nativa) continuam no executável do release. Consulte as instruções de preparação em [BUILDING.md](docs/BUILDING.md). Saves pessoais, replays e arquivos temporários não são versionados. O código Go da engine é mantido no [IKEMEN GO](https://github.com/ikemen-engine/Ikemen-GO).
+
+O [ZIP dos fontes da v0.1.0](https://github.com/edhard-remakes/Super-Street-Fighter-Turbo-Remake-/releases/download/v0.1.0/SF2-Remake-v0.1.0-codigo-fonte.zip) continua disponível como download extra. Para consultar e contribuir com os arquivos atuais, use a branch `main`; os arquivos automáticos de tags antigas refletem o conteúdo existente na data de cada tag.

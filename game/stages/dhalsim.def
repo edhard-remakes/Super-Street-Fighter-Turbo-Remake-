@@ -1,0 +1,186 @@
+[Info]
+name = "Dhalsim HD"
+displayname = "Dhalsim's Stage"
+versiondate = 01/29/16
+mugenversion = 1.1
+author = "Parse"
+
+[Camera]
+startx 		= 0
+starty 		= 0
+boundleft 	= -837
+boundright 	= 837
+boundhigh = 0
+boundlow  	= 0
+tension 	          = 200
+verticalfollow = 0
+floortension 	= 290
+overdrawhigh 	= 120
+overdrawlow 	= 120
+cuthigh 	          = 0
+cutlow              = 0
+
+[PlayerInfo]
+p1startx 	= -430
+p1starty 	= 0
+p1facing 	= 1
+p2startx 	= 430
+p2starty 	= 0
+p2facing 	= -1
+p3startx 	= -400
+p3starty 	= 0
+p3facing 	= 1
+p4startx 	= 400
+p4starty 	= 0
+p4facing 	= -1
+leftbound 	= -4000
+rightbound 	= 4000
+
+[Bound]
+screenleft 	= 150
+screenright 	= 150
+
+[StageInfo]
+zoffset 	= 966
+autoturn 	= 1
+resetBG 	= 0
+localcoord 	= 1920,1080
+xscale 		= .952
+yscale 		= 1
+
+[Scaling]
+topz     	= 0
+botz     	= 50
+topscale 	= 1
+botscale 	= 1.2
+
+[Shadow]
+intensity = 190
+color = 0,0,0
+yscale = -0.190
+fade.range = -670,-320
+xshear = -.2
+
+[Music]
+bgmusic = sound/dhalsim-theme.mp3
+
+
+bgmvolume = 100
+
+[BGdef]
+spr = dhalsim.sff
+debugbg = 0
+
+[BG 1]
+type = normal
+spriteno = 0,0
+start = -14,650
+mask = 0
+delta = .3, 1
+scalestart = 1,1.1
+
+[BG 2]
+type = normal
+spriteno = 1,0
+start = -14,362
+mask = 1
+delta = .596, 1
+scalestart = 1.2844,1.2031
+
+[BG 3_M]
+type = normal
+spriteno = 2,0
+start = -21,455
+mask = 1
+delta = .651, 1
+scalestart = 1.2994,1.0766
+
+[BG 3_L]
+type = normal
+spriteno = 3,0
+start = -1280,250
+mask = 1
+delta = .651, 1
+scalestart = 1.2994,1.0766
+
+[BG 3_R]
+type = normal
+spriteno = 4,0
+start = 1203,381
+mask = 1
+delta = .651, 1
+scalestart = 1.2994,1.0766
+
+[BG Ground]
+type = parallax
+spriteno = 11,0
+start = 53,1353
+mask = 1
+delta = .63, 1
+xscale = 1, 2.3
+scalestart = 1.26,1.085
+
+[BG 4]
+type = normal
+spriteno = 5,0
+start = -35,681
+mask = 1
+delta = .63, 1
+scalestart = 1.336,1.121
+
+[BG elephants_far]
+type = anim
+actionno = 1
+start = -13,764
+mask = 1
+delta = .616, 1
+scalestart = 1.1444,1.193
+
+[BG elephants_mid]
+type = anim
+actionno = 2
+start = -11,840
+mask = 1
+delta = .72, 1
+scalestart = 1.509,1.508
+
+[BG elephants_front]
+type = anim
+actionno = 3
+start = -4,912
+mask = 1
+delta = .85, 1
+scalestart = 1.711,1.847
+
+[BG left_pot]
+type = normal
+spriteno = 9,0
+start = -1426,908
+mask = 1
+delta = .85, 1
+scalestart = 1.186,1.0454
+
+[BG right_pot]
+type = normal
+spriteno = 10,0
+start = 1415,908
+mask = 1
+delta = .85, 1
+scalestart = 1.182,1.0938
+
+;-------------------------------------------------------------------
+[Begin Action 1];elephants_far
+6,0, 0,0, 14
+6,1, 0,0, 14
+6,2, 0,0, 14
+
+[Begin Action 2];elephants_mid
+8,2, 0,0, 6
+8,0, 0,0, 12
+8,1, 0,0, 12
+8,2, 0,0, 6
+
+[Begin Action 3];elephants_front
+7,2, 0,0, 16
+7,0, 0,0, 16
+7,1, 0,0, 16

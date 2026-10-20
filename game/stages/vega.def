@@ -1,0 +1,219 @@
+[Info]
+name = "Vega HD"
+displayname = "Vega's Stage"
+versiondate = 07/12/16
+mugenversion = 1.1
+author = "ZERO7360"
+
+
+[Camera]
+startx 		= 0
+starty 		= 0
+boundleft 	= -1013
+boundright 	= 1018
+boundhigh = 0
+boundlow  	= 0
+tension 	          = 200
+verticalfollow = 0
+floortension 	= 320
+overdrawhigh 	= 120
+overdrawlow 	= 120
+cuthigh 	          = 0
+cutlow              = 0
+
+
+[PlayerInfo]
+p1startx 	= -430
+p1starty 	= 0
+p1facing 	= 1
+p2startx 	= 430
+p2starty 	= 0
+p2facing 	= -1
+p3startx 	= -400
+p3starty 	= 0
+p3facing 	= 1
+p4startx 	= 400
+p4starty 	= 0
+p4facing 	= -1
+leftbound 	= -4000
+rightbound 	= 4000
+
+[Bound]
+screenleft 	= 150
+screenright 	= 150
+
+[StageInfo]
+zoffset 	= 963
+autoturn 	= 1
+resetBG 	= 0
+localcoord 	= 1920,1080
+xscale 		= 1.00198
+yscale 		= 1
+
+[Scaling]
+topz     	= 0
+botz     	= 50
+topscale 	= 1
+botscale 	= 1.2
+
+[Shadow]
+intensity = 200
+color = 0,0,0
+yscale = -0.180
+fade.range = -790,-240
+xshear = -.2
+
+[Music]
+bgmusic = sound/vega-theme.mp3
+
+
+bgmvolume = 100
+
+[BGdef]
+spr = vega.sff
+debugbg = 0
+
+[BG wall_L]
+type = normal 
+spriteno = 13, 0
+start = -800,516
+delta = .67, 1
+mask = 0
+scalestart = 1.39,1.40
+
+[BG Wall_R]
+type = normal 
+spriteno = 13, 1
+start = 800,516
+delta = .67, 1
+mask = 0
+scalestart = 1.39,1.40
+
+[BG Cabinet]
+type = normal
+spriteno = 8,0
+layerno = 0
+start = -700,519
+mask = 1
+delta = .67, 1
+scalestart = 1.22,1.23
+
+[BG Sink]
+type = normal
+spriteno = 8,1
+layerno = 0
+start = 780,519
+mask = 1
+delta = .67, 1
+scalestart = 1.22,1.23
+
+[BG Group 1]
+type = normal
+spriteno = 5,0
+layerno = 0
+start = -1370,519
+mask = 1
+delta = .63, 1
+scalestart = 1.22,1.23
+
+[BG Group 2]
+type = normal
+spriteno = 5,1
+layerno = 0
+start = 1430,519
+mask = 1
+delta = .63, 1
+scalestart = 1.22,1.23
+
+[BG Interior]
+type = normal 
+spriteno = 7, 0
+start = 0,277
+delta = .67, 1
+mask = 1
+scalestart = .97,.98
+
+[BG Neon Sign]
+type = normal
+spriteno = 9,0
+layerno = 0
+start = 0,-100
+mask = 1
+delta = .67, 1
+scalestart = 1.28,1.29
+
+[BG Floor1]
+type = parallax
+spriteno = 12,0
+layerno = 0
+start = 50,1370
+mask = 0
+delta = .665, 1
+xscale = 1, 2.28
+
+[BG man 1]
+type = normal
+spriteno = 10,0
+start = -590,519
+delta = .63, 1
+mask = 1
+scalestart = 1.231,1.23
+
+[BG man 2]
+type = normal
+spriteno = 10,1
+start = 500,519
+delta = .63, 1
+mask = 1
+scalestart = 1.231,1.23
+
+[BG Group 3]
+type  = anim
+actionno = 2
+start = -691,519
+delta = .67, 1
+mask = 1
+scalestart = 1.231,1.23
+
+[BG Group 5]
+type  = anim
+actionno = 4
+start = -100,519
+delta = .67, 1
+mask = 1
+scalestart = 1.231,1.23
+
+[BG Group 4]
+type  = anim
+actionno = 3
+start = 571,519
+delta = .67, 1
+mask = 1
+scalestart = 1.234,1.25
+
+[BG steps]
+type = normal
+spriteno = 0,0
+layerno = 0
+start = -180,1570
+mask = 1
+delta = .67, 1
+scalestart = 1.19,1.20
+
+[BG Fence]
+type = normal 
+spriteno = 6, 0
+start = 0,877
+delta = .67, 1
+mask = 1
+scalestart = 1.46,1.48
+
+[Begin Action 2] ; stable spectator geometry
+2,0, 0,0, -1
+
+[Begin Action 3] ; stable spectator geometry
+3,0, 0,0, -1
+
+[Begin Action 4] ; stable spectator geometry
+4,0, 0,0, -1
+

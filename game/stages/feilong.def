@@ -1,0 +1,122 @@
+; Stage information :
+; -----------------
+; From the game: 	Super Street Fighter II - The New Challengers
+; Name:			Fei Long's Stage (Hong Kong)
+; Version:		0.1b
+
+; Original Information :	
+; Stage By:		Dark Saviour
+; From:			Win Kawaks 1.45
+; With:			MCM 1.5
+; Date:			03/12/2002
+; Email: 		darksaviour77@hotmail.com
+; Site:			http://www.ds-arena.fr.st
+
+; Super Jump Info :	
+; Additional Sprites:	Acey
+; Update Date:		05/11/2012
+; Email: 		admin@infinitymugenteam.com
+; Site:			http://www.infinitymugenteam.com
+
+;--------------------------------------------------------
+[Info]
+name = "(SSF2) Fei Long"
+
+;--------------------------------------------------------
+[Camera]
+startx = 0
+starty = 0
+boundleft = -224
+boundright = 224
+boundhigh = 0
+boundlow = 0
+verticalfollow = 0
+floortension = 0
+tension = 60
+
+;--------------------------------------------------------
+[PlayerInfo]
+p1startx = -80
+p1starty = 0
+p1startz = 0
+p1facing = 1
+p2startx = 80
+p2starty = 0
+p2startz = 0
+p2facing = -1
+leftbound = -1000
+rightbound = 1000
+topbound = 0
+botbound = 0
+
+;--------------------------------------------------------
+[Scaling]
+topz = 0       
+botz = 50      
+topscale = 1       
+botscale = 1.2     
+
+;--------------------------------------------------------
+[Bound]
+screenleft = 40
+screenright = 40
+
+;--------------------------------------------------------
+[StageInfo]
+zoffset = 216
+autoturn = 1
+resetBG = 0
+
+;--------------------------------------------------------
+[Shadow]
+;color = 128, 128, 128
+yscale = .15
+reflect = 0
+
+;--------------------------------------------------------
+[Music]
+bgmusic = stages/feilong.mp3
+bgvolume = 255
+
+;--------------------------------------------------------
+[BGdef]
+spr = feilong.sff
+debugbg = 0
+
+;--------------------------------------------------------
+;--------------------------------------------------------
+
+[BG Background]
+type = normal 
+spriteno = 0, 0
+start = 0, 0
+delta = .408482, 1
+scalestart = 0.351550960, 0.351421189
+
+
+[BG Rock]
+type = normal 
+spriteno = 1, 0
+start = 67, 0
+delta = .433035, 1
+mask = 1
+scalestart = 0.215419501, 0.215367358
+
+
+[BG Ground]
+type = parallax
+spriteno = 3, 0
+start = 0, 192
+delta = .837053, 1
+xscale = 1, 1.421334
+scalestart = 0.593202884, 0.301886792
+
+
+[BG Foreground]
+type  = normal
+spriteno = 2, 0
+start = 0, 126
+delta = .837053, 1
+mask = 1
+scalestart = 0.320276498, 0.242587601
+
